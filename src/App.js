@@ -7,6 +7,7 @@ import {configureStore}
 import userReducer from "./reducers/user-reducer";
 import CurrentUser from "./components/CurrentUser";
 import Register from "./components/register";
+import Login from "./components/login";
 
 const store = configureStore({
   reducer: {
@@ -23,6 +24,7 @@ function App() {
                   <Routes>
                     <Route index element={<HomeScreen/>}/>
                       <Route path="/register" element={<Register/>}/>
+                      <Route path="/login" element={<Login/>}/>
                   </Routes>
                 </div>
             </CurrentUser>
