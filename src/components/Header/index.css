@@ -1,0 +1,15 @@
+@import url('https://fonts.cdnfonts.com/css/f-fighter-fish');
+
+.logo-image {
+    width: 60px;
+    height: 100%;
+}
+
+.logo-text {
+    vertical-align: -webkit-baseline-middle;
+    padding-left: 10px;
+    font-size: 35px;
+    font-family: 'f Fighter Fish', sans-serif;
+    font-weight: 600;
+    color: black;
+}

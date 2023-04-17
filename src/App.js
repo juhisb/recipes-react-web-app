@@ -2,6 +2,7 @@ import {BrowserRouter} from "react-router-dom";
 import {Routes, Route} from "react-router";
 import {Provider} from "react-redux";
 import HomeScreen from "./components/HomeComponent/index";
+import ProfileScreen from "./components/ProfileComponent/index";
 import {configureStore}
   from '@reduxjs/toolkit';
 
@@ -16,6 +17,7 @@ function App() {
             <div>
               <Routes>
                 <Route index element={<HomeScreen/>}/>
+                <Route path="profile" element={<ProfileScreen/>}/>
               </Routes>
             </div>
         </BrowserRouter>
