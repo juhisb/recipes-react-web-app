@@ -1,5 +1,6 @@
 const APP_URL = {
-    react: 'https://main--clever-puffpuff-05a6ef.netlify.app',
-    node_server: 'http://localhost:4000/api/tuits'
+    react: 'http://localhost:3000',
+    node_server: 'http://localhost:4000'
+
 };
 export default APP_URL;
