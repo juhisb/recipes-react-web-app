@@ -15,6 +15,7 @@ export const adminLogout = async () => {
     return response.data;
 }
 
+<<<<<<< HEAD
 export const getReviewerList = async (adminId) => {
     const response = await api.post(`${API_BASE}/admin/list/${adminId}`, adminId)
     return response.data;
@@ -26,6 +27,8 @@ export const addReviewer = async (reviewerId) => {
     return response.data
 }
 
+=======
+>>>>>>> master
 export const getAdminDetails = async () => {
     const response = await api.get(`${API_BASE}/admin/details`)
     return response.data
