@@ -5,24 +5,29 @@ import {useDispatch, useSelector} from "react-redux";
 import {useNavigate} from "react-router";
 import {logoutThunk, profileThunk} from "../../services/user-thunk";
 import {adminLogoutThunk} from "../../services/admin-thunk";
-import {useEffect} from "react";
+import {useEffect, useState} from "react";
 
 const Header = () => {
     const {currentUser} = useSelector(state => state.userData)
+    const [profile, setProfile] = useState(currentUser)
     const {currentAdmin} = useSelector(state => state.adminData)
     const dispatch = useDispatch()
     const navigate = useNavigate()
-    const handleLogout = () => {
+    const handleLogout = async () => {
         console.log('logging out');
         dispatch(logoutThunk())
         if (currentAdmin) {
             dispatch(adminLogoutThunk())
         }
-        navigate('../')
+        navigate('/');
     }
-    console.log(currentUser)
     useEffect(() => {
-        dispatch(profileThunk())
+        const load = async () => {
+            const {payload} = await dispatch(profileThunk());
+            console.log(payload);
+            setProfile(payload);
+        }
+        load();
     }, [])
     return (
         <>
@@ -40,9 +45,9 @@ const Header = () => {
                     {/*<Navbar.Collapse id="responsive-navbar-nav">*/}
                     <Nav>
                         {
-                            currentUser &&
+                            profile &&
                             <>
-                                <Nav.Link>Welcome {currentUser.username}</Nav.Link>
+                                <Nav.Link>Welcome {profile.username}</Nav.Link>
                                 <Nav.Link onClick={handleLogout} className="nav-link" href="#">Logout</Nav.Link>
                                 <Link to="/profile" className="nav-link" href="#">Profile</Link>
                                 {
@@ -52,7 +57,7 @@ const Header = () => {
                             </>
                         }
                         {
-                            !currentUser &&
+                            !profile &&
                             <>
                                 <Link to="/login" className="nav-link" href="#">Login</Link>
                                 <Link to="/register" className="nav-link" href="#">Sign Up</Link>
