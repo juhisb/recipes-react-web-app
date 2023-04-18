@@ -2,24 +2,32 @@ import {BrowserRouter} from "react-router-dom";
 import {Routes, Route} from "react-router";
 import {Provider} from "react-redux";
 import HomeScreen from "./components/HomeComponent/index";
-import ProfileScreen from "./components/ProfileComponent/index";
 import {configureStore}
   from '@reduxjs/toolkit';
+import userReducer from "./reducers/user-reducer";
+import CurrentUser from "./components/CurrentUser";
+import Register from "./components/register";
+import Login from "./components/login";
 
 const store = configureStore({
-  reducer: {},
+  reducer: {
+      userData: userReducer
+  },
 });
 
 function App() {
   return (
       <Provider store={store}>
         <BrowserRouter>
-            <div>
-              <Routes>
-                <Route index element={<HomeScreen/>}/>
-                <Route path="profile" element={<ProfileScreen/>}/>
-              </Routes>
-            </div>
+            <CurrentUser>
+                <div>
+                  <Routes>
+                    <Route index element={<HomeScreen/>}/>
+                      <Route path="/register" element={<Register/>}/>
+                      <Route path="/login" element={<Login/>}/>
+                  </Routes>
+                </div>
+            </CurrentUser>
         </BrowserRouter>
       </Provider>
   )
