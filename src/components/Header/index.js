@@ -13,7 +13,7 @@ const Header = () => {
     const {currentAdmin} = useSelector(state => state.adminData)
     const dispatch = useDispatch()
     const navigate = useNavigate()
-    const handleLogout = async () => {
+    const handleLogout = () => {
         console.log('logging out');
         dispatch(logoutThunk())
         if (currentAdmin) {
