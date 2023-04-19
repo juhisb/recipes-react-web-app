@@ -4,12 +4,11 @@ import './index.css'
 import {useDispatch, useSelector} from "react-redux";
 import {useNavigate} from "react-router";
 import {logoutThunk, profileThunk} from "../../services/user-thunk";
-import {adminLogoutThunk} from "../../services/admin-thunk";
+import {adminLogoutThunk, adminProfileThunk} from "../../services/admin-thunk";
 import {useEffect, useState} from "react";
 
 const Header = () => {
     const {currentUser} = useSelector(state => state.userData)
-    const [profile, setProfile] = useState(currentUser)
     const {currentAdmin} = useSelector(state => state.adminData)
     const dispatch = useDispatch()
     const navigate = useNavigate()
@@ -23,9 +22,8 @@ const Header = () => {
     }
     useEffect(() => {
         const load = async () => {
-            const {payload} = await dispatch(profileThunk());
-            console.log(payload);
-            setProfile(payload);
+            await dispatch(profileThunk());
+            await dispatch(adminProfileThunk());
         }
         load();
     }, [])
@@ -45,27 +43,28 @@ const Header = () => {
                     {/*<Navbar.Collapse id="responsive-navbar-nav">*/}
                     <Nav>
                         {
-                            profile &&
+                            currentUser &&
                             <>
-                                <Nav.Link>Welcome {profile.username}</Nav.Link>
+                                <Nav.Link>Welcome {currentUser.username}</Nav.Link>
                                 <Nav.Link onClick={handleLogout} className="nav-link" href="#">Logout</Nav.Link>
                                 <Link to="/profile" className="nav-link" href="#">Profile</Link>
-                                {
-                                    (currentUser?.accountType === 'ADMIN') &&
-                                    <Link to="/admin" className="nav-link" href="#">Permissions</Link>
-                                }
                             </>
                         }
                         {
-                            !profile &&
+                            currentAdmin &&
+                            <>
+                                <Nav.Link>Welcome {currentAdmin.username}</Nav.Link>
+                                <Nav.Link onClick={handleLogout} className="nav-link" href="#">Logout</Nav.Link>
+                                <Link to="/profile" className="nav-link" href="#">Profile</Link>
+                                <Link to="/admin" className="nav-link" href="#">Permissions</Link>
+                            </>
+                        }
+                        {
+                            !currentUser && !currentAdmin &&
                             <>
                                 <Link to="/login" className="nav-link" href="#">Login</Link>
                                 <Link to="/register" className="nav-link" href="#">Sign Up</Link>
-                                {
-                                    !currentAdmin &&
-                                    <Link to="/admin/login" className="nav-link" href="#">Admin</Link>
-                                }
-
+                                <Link to="/admin/login" className="nav-link" href="#">Admin</Link>
                             </>
                         }
 

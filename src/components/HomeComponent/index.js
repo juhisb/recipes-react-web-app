@@ -7,7 +7,6 @@ const HomeScreen = () => {
     return (
         <div>
             {/*<h2>Welcome to Recipe Recommender!!</h2>*/}
-            <Header/>
             {/*<RecipeList/>*/}
         </div>
     );

@@ -15,6 +15,7 @@ import reviewerReducer from "./reducers/reviewer-reducer";
 import recipesReducer from "./reducers/recipes-reducer";
 import searchReducer from "./reducers/search-reducer";
 import Search from "./components/Search";
+import Header from "./components/Header";
 
 const store = configureStore({
   reducer: {
@@ -31,6 +32,7 @@ function App() {
       <Provider store={store}>
         <BrowserRouter>
             <CurrentUser>
+                <Header/>
                 <div>
                   <Routes>
                     <Route index element={<HomeScreen/>}/>
