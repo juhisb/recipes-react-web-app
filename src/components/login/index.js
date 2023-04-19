@@ -18,7 +18,7 @@ const Login = () => {
     useEffect(() => {
         // redirect user to home page if login was successful
         if (currentUser) {
-            console.log(currentUser);
+            // console.log(currentUser);
             navigate('/')
         }
     }, [navigate, currentUser])

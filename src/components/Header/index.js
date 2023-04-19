@@ -1,14 +1,13 @@
-import {Navbar, Container, Nav, NavDropdown} from "react-bootstrap";
-// import logo_test from "../../images/logo_test.png"
+import {Container, Nav, Navbar} from "react-bootstrap";
+import {Link} from "react-router-dom";
 import './index.css'
 import {useDispatch, useSelector} from "react-redux";
-import {Link} from "react-router-dom";
-import {profileThunk, logoutThunk} from "../../services/user-thunk";
-import {useEffect} from "react";
 import {useNavigate} from "react-router";
-import {adminLogoutThunk} from "../../services/admin-thunk";
+import {logoutThunk, profileThunk} from "../../services/user-thunk";
+import {adminLogoutThunk, adminProfileThunk} from "../../services/admin-thunk";
+import {useEffect, useState} from "react";
 
-const HeaderBar = () => {
+const Header = () => {
     const {currentUser} = useSelector(state => state.userData)
     const {currentAdmin} = useSelector(state => state.adminData)
     const dispatch = useDispatch()
@@ -19,27 +18,29 @@ const HeaderBar = () => {
         if (currentAdmin) {
             dispatch(adminLogoutThunk())
         }
-        navigate('../')
+        navigate('/');
     }
     useEffect(() => {
-        dispatch(profileThunk())
+        const load = async () => {
+            await dispatch(profileThunk());
+            await dispatch(adminProfileThunk());
+        }
+        load();
     }, [])
     return (
         <>
-            <Navbar className="shadow-lg mb-5 bg-body rounded">
+            <Navbar expand="lg" bg="light" variant="light" collapseOnSelect>
                 <Container>
-                    <Nav className="me-auto">
+
                         <Navbar.Brand href="/">
                             <img
-                                src={"../../../images/logo_test.png"}
-                                className="d-inline-block align-top logo-image"
-                                alt="AnimePedia"
+                                src={"../../../images/logo.png"}
+                                className="d-inline-block align-top logo"
+                                alt="MealTime"
                             />
-                            <span className="logo-text">
-                      AnimePedia
-                  </span>
+                  {/*          <Navbar.Toggle aria-controls="responsive-navbar-nav" />*/}
                         </Navbar.Brand>
-                    </Nav>
+                    {/*<Navbar.Collapse id="responsive-navbar-nav">*/}
                     <Nav>
                         {
                             currentUser &&
@@ -47,33 +48,31 @@ const HeaderBar = () => {
                                 <Nav.Link>Welcome {currentUser.username}</Nav.Link>
                                 <Nav.Link onClick={handleLogout} className="nav-link" href="#">Logout</Nav.Link>
                                 <Link to="/profile" className="nav-link" href="#">Profile</Link>
-                                {
-                                    (currentUser?.accountType === 'ADMIN') &&
-                                    <Link to="/admin" className="nav-link" href="#">Permissions</Link>
-                                }
                             </>
                         }
                         {
-                            !currentUser &&
+                            currentAdmin &&
+                            <>
+                                <Nav.Link>Welcome {currentAdmin.username}</Nav.Link>
+                                <Nav.Link onClick={handleLogout} className="nav-link" href="#">Logout</Nav.Link>
+                                <Link to="/profile" className="nav-link" href="#">Profile</Link>
+                                <Link to="/admin" className="nav-link" href="#">Permissions</Link>
+                            </>
+                        }
+                        {
+                            !currentUser && !currentAdmin &&
                             <>
                                 <Link to="/login" className="nav-link" href="#">Login</Link>
                                 <Link to="/register" className="nav-link" href="#">Sign Up</Link>
-                                {/*{*/}
-                                {/*    currentAdmin &&*/}
-                                {/*    <Link to="/admin" className="nav-link" href="#">Admin</Link>*/}
-                                {/*}*/}
-                                {
-                                    !currentAdmin &&
-                                    <Link to="/admin/login" className="nav-link" href="#">Admin</Link>
-                                }
-
+                                <Link to="/admin/login" className="nav-link" href="#">Admin</Link>
                             </>
                         }
 
                     </Nav>
+                    {/*</Navbar.Collapse>*/}
                 </Container>
             </Navbar>
         </>
     );
 }
-export default HeaderBar;
+export default Header;

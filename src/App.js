@@ -1,8 +1,8 @@
+
 import {BrowserRouter} from "react-router-dom";
 import {Routes, Route} from "react-router";
 import {Provider} from "react-redux";
 import HomeScreen from "./components/HomeComponent/index";
-import ProfileScreen from "./components/ProfileComponent/index";
 import {configureStore}
   from '@reduxjs/toolkit';
 import userReducer from "./reducers/user-reducer";
@@ -13,12 +13,18 @@ import adminReducer from "./reducers/admin-reducer";
 import AdminLogin from "./components/AdminLogin";
 import AdminHomePage from "./components/AdminHome";
 import reviewerReducer from "./reducers/reviewer-reducer";
+import recipesReducer from "./reducers/recipes-reducer";
+import searchReducer from "./reducers/search-reducer";
+import Search from "./components/Search";
+import Header from "./components/Header";
 
 const store = configureStore({
   reducer: {
       userData: userReducer,
+      recipes: recipesReducer,
       adminData: adminReducer,
       reviewer: reviewerReducer,
+      search: searchReducer
   },
 });
 
@@ -27,14 +33,15 @@ function App() {
       <Provider store={store}>
         <BrowserRouter>
             <CurrentUser>
+                <Header/>
                 <div>
                   <Routes>
-                      <Route index element={<HomeScreen/>}/>
-                      <Route path="/profile" element={<ProfileScreen/>}/>
+                    <Route index element={<HomeScreen/>}/>
                       <Route path="/register" element={<Register/>}/>
                       <Route path="/login" element={<Login/>}/>
                       <Route path="/admin/login" element={<AdminLogin/>}/>
                       <Route path="/admin" element={<AdminHomePage/>}/>
+                      <Route path="/search" element={<Search/>}/>
                   </Routes>
                 </div>
             </CurrentUser>
