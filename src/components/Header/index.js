@@ -4,8 +4,8 @@ import './index.css'
 import {useDispatch, useSelector} from "react-redux";
 import {useNavigate} from "react-router";
 import {logoutThunk, profileThunk} from "../../services/user-thunk";
-import {adminLogoutThunk} from "../../services/admin-thunk";
-import {useEffect} from "react";
+import {adminLogoutThunk, adminProfileThunk} from "../../services/admin-thunk";
+import {useEffect, useState} from "react";
 
 const Header = () => {
     const {currentUser} = useSelector(state => state.userData)
@@ -18,11 +18,14 @@ const Header = () => {
         if (currentAdmin) {
             dispatch(adminLogoutThunk())
         }
-        navigate('../')
+        navigate('/');
     }
-    console.log(currentUser)
     useEffect(() => {
-        dispatch(profileThunk())
+        const load = async () => {
+            await dispatch(profileThunk());
+            await dispatch(adminProfileThunk());
+        }
+        load();
     }, [])
     return (
         <>
@@ -45,22 +48,23 @@ const Header = () => {
                                 <Nav.Link>Welcome {currentUser.username}</Nav.Link>
                                 <Nav.Link onClick={handleLogout} className="nav-link" href="#">Logout</Nav.Link>
                                 <Link to="/profile" className="nav-link" href="#">Profile</Link>
-                                {
-                                    (currentUser?.accountType === 'ADMIN') &&
-                                    <Link to="/admin" className="nav-link" href="#">Permissions</Link>
-                                }
                             </>
                         }
                         {
-                            !currentUser &&
+                            currentAdmin &&
+                            <>
+                                <Nav.Link>Welcome {currentAdmin.username}</Nav.Link>
+                                <Nav.Link onClick={handleLogout} className="nav-link" href="#">Logout</Nav.Link>
+                                <Link to="/profile" className="nav-link" href="#">Profile</Link>
+                                <Link to="/admin" className="nav-link" href="#">Permissions</Link>
+                            </>
+                        }
+                        {
+                            !currentUser && !currentAdmin &&
                             <>
                                 <Link to="/login" className="nav-link" href="#">Login</Link>
                                 <Link to="/register" className="nav-link" href="#">Sign Up</Link>
-                                {
-                                    !currentAdmin &&
-                                    <Link to="/admin/login" className="nav-link" href="#">Admin</Link>
-                                }
-
+                                <Link to="/admin/login" className="nav-link" href="#">Admin</Link>
                             </>
                         }
 

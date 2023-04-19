@@ -14,10 +14,10 @@ import AdminHomePage from "./components/AdminHome";
 import reviewerReducer from "./reducers/reviewer-reducer";
 import recipesReducer from "./reducers/recipes-reducer";
 import searchReducer from "./reducers/search-reducer";
-import Header from "./components/Header";
 import SearchScreen from "./components/SearchComponent";
 import recipeDetailReducer from "./reducers/recipe-detail-reducer";
 import Detail from "./components/Details";
+import Header from "./components/Header";
 
 const store = configureStore({
   reducer: {

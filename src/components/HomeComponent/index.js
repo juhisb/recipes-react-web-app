@@ -1,5 +1,4 @@
 import React from "react";
-import Header from "../Header";
 import RecipeList from "../RecipeList";
 
 const HomeScreen = () => {
