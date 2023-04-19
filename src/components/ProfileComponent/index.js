@@ -9,7 +9,7 @@ import CurrentUser from "../CurrentUser";
 import LikedRecipe from "../LikedRecipe";
 
 const ProfileScreen = () => {
-
+     const {currentUser} = useSelector(state => state.userData);
      const [editProfile, setEditProfile] = useState(false);
      const navigate = useNavigate();
      const [input, setInput] = useState();
@@ -64,7 +64,7 @@ const ProfileScreen = () => {
                                                         </div>
                                                     </div>
                                                     <div className="m-3 text-secondary">
-                                                        <h4 className="title"> Name : {CurrentUser.firstName} {CurrentUser.lastName}</h4>
+                                                        <h4 className="title"> Name : {currentUser.firstName} {currentUser.lastName}</h4>
                                                         <h4 className="title"> Email Id : aaa@gmail.com </h4>
                                                         <h4 className="title"> Phone Number : 12345678 </h4>
                                                         <h4 className="title"> Account Type : Private </h4>
