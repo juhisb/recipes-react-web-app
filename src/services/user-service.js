@@ -57,8 +57,4 @@ export const searchByUsername = async (username) => {
 export const findUserId = async (username) => {
     const response = await api.get(`${API_BASE}/user/reviewer/${username}`)
     return response.data
-<<<<<<< HEAD
-
-=======
->>>>>>> master
 }

@@ -5,6 +5,8 @@ import {profileThunk} from "../../services/user-thunk";
 import {useNavigate} from "react-router";
 import HeaderBar from "../Header";
 import {Link} from "react-router-dom";
+import CurrentUser from "../CurrentUser";
+import LikedRecipe from "../LikedRecipe";
 
 const ProfileScreen = () => {
 
@@ -14,7 +16,6 @@ const ProfileScreen = () => {
      const editClickHandler = () => {
              setEditProfile(true);
              navigate("/edit-profile");
-
      }
 
     return (
@@ -63,13 +64,16 @@ const ProfileScreen = () => {
                                                         </div>
                                                     </div>
                                                     <div className="m-3 text-secondary">
-                                                        <h4 className="title"> Name : Mary Joseph</h4>
+                                                        <h4 className="title"> Name : {CurrentUser.firstName} {CurrentUser.lastName}</h4>
                                                         <h4 className="title"> Email Id : aaa@gmail.com </h4>
                                                         <h4 className="title"> Phone Number : 12345678 </h4>
                                                         <h4 className="title"> Account Type : Private </h4>
                                                     </div>
 
                                                 </div>
+
+
+
                             </div>
             </div>
 
