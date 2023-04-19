@@ -15,8 +15,6 @@ const RecipeList = () => {
         dispatch(recipesThunk())
     }, [])
 
-    console.log(recipesList)
-
     return (
         <>
             {
@@ -28,7 +26,7 @@ const RecipeList = () => {
             <div>
                 <Row class="mt-5 justify-content-center align-items-stretch">
                     {recipesList.filter((r, a) => a < 8).map((r, a) => (
-                        <SearchResults recipes={r} index={a}/>
+                        <SearchResults recipes={r}/>
                     ))}
                 </Row>
 

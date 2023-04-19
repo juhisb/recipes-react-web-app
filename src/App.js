@@ -14,7 +14,10 @@ import AdminHomePage from "./components/AdminHome";
 import reviewerReducer from "./reducers/reviewer-reducer";
 import recipesReducer from "./reducers/recipes-reducer";
 import searchReducer from "./reducers/search-reducer";
-import Search from "./components/Search";
+import Header from "./components/Header";
+import SearchScreen from "./components/SearchComponent";
+import recipeDetailReducer from "./reducers/recipe-detail-reducer";
+import Detail from "./components/Details";
 
 const store = configureStore({
   reducer: {
@@ -22,7 +25,8 @@ const store = configureStore({
       recipes: recipesReducer,
       adminData: adminReducer,
       reviewer: reviewerReducer,
-      search: searchReducer
+      searchRecipes: searchReducer,
+      recipeData: recipeDetailReducer
   },
 });
 
@@ -31,14 +35,16 @@ function App() {
       <Provider store={store}>
         <BrowserRouter>
             <CurrentUser>
-                <div>
+                <Header/>
+                <div className="container">
                   <Routes>
                     <Route index element={<HomeScreen/>}/>
                       <Route path="/register" element={<Register/>}/>
                       <Route path="/login" element={<Login/>}/>
                       <Route path="/admin/login" element={<AdminLogin/>}/>
                       <Route path="/admin" element={<AdminHomePage/>}/>
-                      <Route path="/search" element={<Search/>}/>
+                      <Route path="/search" element={<SearchScreen/>}/>
+                      <Route path="/detail/:id" element={<Detail/>}/>
                   </Routes>
                 </div>
             </CurrentUser>

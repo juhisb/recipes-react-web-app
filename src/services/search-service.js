@@ -5,7 +5,8 @@ export const search = async (query) => {
     const response = await axios.get(url,
         {
             params: {
-                query
+                'query': query,
+                'number': 16
             },
             headers: {
                 'x-rapidapi-host': APP_URL.x_rapidapi_host,
@@ -13,5 +14,6 @@ export const search = async (query) => {
             }
         }
     )
-    return response.data.recipes;
+    console.log(response.data)
+    return response.data.results;
 }
