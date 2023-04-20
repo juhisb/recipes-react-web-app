@@ -27,7 +27,6 @@ const UserSearch = () => {
 
     return (
         <>
-            <HeaderBar/>
             <div className="row" >
                 <div className="col-8 px-5 mx-5">
                     <div className="px-5 pb-2">
