@@ -5,14 +5,15 @@ import SearchResults from "../SearchResults";
 import {recipeDetailThunk} from "../../services/recipe-detail-thunk";
 import {Link, useParams} from "react-router-dom";
 import NewReview from "../NewReview";
+import ReviewList from "../ReviewComponent";
 
 const Detail = () => {
     const params = useParams();
     const { currentUser } = useSelector(state => state.userData);
-    const { currentReviewer, pendingList } = useSelector(state => state.reviewer);
+    const { currentReviewer } = useSelector(state => state.reviewer);
     const {recipeData, loading} = useSelector(state => state.recipeData)
     const dispatch = useDispatch()
-
+    console.log(currentUser)
     useEffect(() => {
         dispatch(recipeDetailThunk(params.id))
     }, [])
@@ -36,10 +37,12 @@ const Detail = () => {
                         {/*</Link>*/}
                         {/*<Card.Text>{recipe.summary.substring(0, 100)} {recipe.summary.length >= 200 && '...'}</Card.Text>*/}
                     </Card.Body>
+                    <h2 className="title">Reviews</h2>
                     {
-                        (!currentUser || currentReviewer) &&
+                        (!currentUser || currentUser.accountType === 'REVIEWER') &&
                         <NewReview recipeId={params.id} recipeInfo={recipeData}  />
                     }
+                    <ReviewList recipeId={params.id}/>
                 </div>
 
 

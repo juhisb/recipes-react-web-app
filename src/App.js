@@ -18,6 +18,7 @@ import SearchScreen from "./components/SearchComponent";
 import recipeDetailReducer from "./reducers/recipe-detail-reducer";
 import Detail from "./components/Details";
 import Header from "./components/Header";
+import reviewReducer from "./reducers/review-reducer";
 
 const store = configureStore({
   reducer: {
@@ -26,7 +27,8 @@ const store = configureStore({
       adminData: adminReducer,
       reviewer: reviewerReducer,
       searchRecipes: searchReducer,
-      recipeData: recipeDetailReducer
+      recipeData: recipeDetailReducer,
+      review: reviewReducer
   },
 });
 

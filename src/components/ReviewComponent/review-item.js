@@ -1,7 +1,6 @@
 import { Card } from "react-bootstrap";
 import { removeReviewThunk } from "../../services/review-thunk.js";
 import { useDispatch, useSelector } from "react-redux";
-import "../RandomAnimeComponent/index.css"
 import APP_URL from "../../constants";
 const ReviewItem = (
     {
@@ -14,8 +13,10 @@ const ReviewItem = (
         dispatch(removeReviewThunk(id));
     }
     const { currentUser } = useSelector(state => state.userData);
+    const {currentAdmin} = useSelector(state => state.adminData)
+    console.log(currentAdmin)
     const renderIcon = () => <i
-        className="bi bi-star"
+        className={`bi-star-fill`}
         style={{ fontSize: 20, color: '#f1c40f' }}
     />;
 
@@ -39,7 +40,7 @@ const ReviewItem = (
                                 </div>:null
                             }
                             {
-                                (user && currentUser && currentUser._id === user._id) ||(currentUser && currentUser.accountType === 'ADMIN') ?
+                                (user && currentUser && currentUser._id === user._id) ||(currentAdmin) ?
                                     <i className="bi bi-trash col-1 float-end p-0"
                                        onClick={() => deleteReviewHandler(rev._id)}></i> : null
                             }

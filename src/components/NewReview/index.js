@@ -10,7 +10,7 @@ const NewReview = (
     }) => {
     let [reviewByUser, setReviewByUser] = useState('');
     const { currentUser } = useSelector(state => state.userData);
-
+    console.log(recipeInfo)
     const [rating, setRating] = useState(0)
     const dispatch = useDispatch();
     const reviewClickHAndler = () => {
@@ -19,14 +19,15 @@ const NewReview = (
             return;
         }
         const newReview = {
-            animeId: recipeId,
+            recipeId: recipeId,
             reviewBy: currentUser,
             review: reviewByUser,
             rating: rating,
-            animeImage: recipeInfo.image,
-            animeTitle: recipeInfo.title
+            recipeImage: recipeInfo.image,
+            recipeTitle: recipeInfo.title
         }
         dispatch(createReviewThunk(newReview));
+        setReviewByUser('')
     }
 
     // Catch Rating value
@@ -38,7 +39,7 @@ const NewReview = (
     const onPointerLeave = () => console.log('Leave')
     const onPointerMove = (value, index) => console.log(value, index)
     return (
-        <><h2 className="title">Reviews</h2><div className="card shadow-sm p-3 mb-5 bg-body rounded">
+        <><div className="card shadow-sm p-3 mb-5 bg-body rounded">
             <div className="card-body">
                 <h5>Add a review</h5>
                 <Rating
