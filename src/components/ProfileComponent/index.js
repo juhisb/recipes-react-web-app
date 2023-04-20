@@ -4,12 +4,14 @@ import "./index.css"
 import {profileThunk} from "../../services/user-thunk";
 import {useNavigate} from "react-router";
 import {Link} from "react-router-dom";
-import LikedRecipe from "../LikedRecipe";
+// import LikedRecipe from "../LikedRecipe";
 import Following from "../Following";
+import UserReview from "../UserReview";
 
 
 const ProfileScreen = () => {
     const {currentUser} = useSelector(state => state.userData)
+    const { currentReviewer, pendingList } = useSelector(state => state.reviewer);
     const [editProfile, setEditProfile] = useState(false);
     const navigate = useNavigate();
     const [input, setInput] = useState();
@@ -71,13 +73,13 @@ const ProfileScreen = () => {
                         </div>
 
                     </div>
-                    <p className="title">Recipies You Liked </p>
-                    <LikedRecipe/>
+                    {/*<p className="title">Recipies You Liked </p>*/}
+                    {/*<LikedRecipe/>*/}
 
-                    {/*{ currentReviewer && <>*/}
-                    {/*    <p className="title"> Reviews Posted </p>*/}
-                    {/*    <UserReview/>*/}
-                    {/*</> }*/}
+                    {<>
+                        <p className="title"> Reviews Posted </p>
+                        <UserReview/>
+                    </> }
 
                 </div>
                 <div className="col">
