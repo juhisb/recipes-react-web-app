@@ -22,6 +22,7 @@ import recipeDetailReducer from "./reducers/recipe-detail-reducer";
 import Detail from "./components/Details";
 import Header from "./components/Header";
 import reviewReducer from "./reducers/review-reducer";
+import Following from "./components/Following";
 
 const store = configureStore({
   reducer: {
