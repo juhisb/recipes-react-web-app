@@ -16,7 +16,7 @@ const LikedRecipe = () => {
     }, [])
     return (
         <div>
-            <Row class="mt-5 justify-content-center align-items-stretch">
+            <Row className="mt-5 justify-content-center align-items-stretch">
                 {likedRecipeList?.map((recipe) => (
                     <Col key={recipe.id} xs={12} md={4} lg={3} sm={6}>
                         <Card className="shadow p-0 mb-5 bg-white rounded">

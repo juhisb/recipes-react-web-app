@@ -13,12 +13,26 @@ import adminReducer from "./reducers/admin-reducer";
 import AdminLogin from "./components/AdminLogin";
 import AdminHomePage from "./components/AdminHome";
 import reviewerReducer from "./reducers/reviewer-reducer";
+import recipesReducer from "./reducers/recipes-reducer";
+import searchReducer from "./reducers/search-reducer";
+import Search from "./components/Search";
+import Header from "./components/Header";
+import likedRecipeReducer from "./reducers/liked-recipe-reducer";
+import followingReducer from "./reducers/following-reducer";
+import Following from "./components/Following";
+import UserSearch from "./components/UserSearch";
+import OtherUserProfile from "./components/OtherUserProfile";
 
 const store = configureStore({
   reducer: {
       userData: userReducer,
+      recipes: recipesReducer,
       adminData: adminReducer,
       reviewer: reviewerReducer,
+      search: searchReducer,
+      likedRecipe: likedRecipeReducer,
+      following: followingReducer,
+
   },
 });
 
@@ -27,14 +41,19 @@ function App() {
       <Provider store={store}>
         <BrowserRouter>
             <CurrentUser>
+                <Header/>
                 <div>
                   <Routes>
                       <Route index element={<HomeScreen/>}/>
                       <Route path="/profile" element={<ProfileScreen/>}/>
                       <Route path="/register" element={<Register/>}/>
                       <Route path="/login" element={<Login/>}/>
+                      <Route path="/follow/:usid" element={<Following/>}/>
+                      <Route path="/searchUsers/:usid" element={<UserSearch/>}/>
+                      <Route path="/profile/:usid" element={<OtherUserProfile/>}/>
                       <Route path="/admin/login" element={<AdminLogin/>}/>
                       <Route path="/admin" element={<AdminHomePage/>}/>
+                      <Route path="/search" element={<Search/>}/>
                   </Routes>
                 </div>
             </CurrentUser>

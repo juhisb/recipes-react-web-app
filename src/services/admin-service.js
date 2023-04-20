@@ -10,6 +10,11 @@ export const adminLogin = async (admin) => {
     return response.data;
 }
 
+export const adminProfile = async (admin) => {
+    const response = await api.get(`${API_BASE}/admin/profile`);
+    return response.data;
+}
+
 export const adminLogout = async () => {
     const response = await api.post(`${API_BASE}/admin/logout`)
     return response.data;

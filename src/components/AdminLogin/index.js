@@ -16,7 +16,7 @@ const AdminLogin = () => {
     useEffect(() => {
         if(currentAdmin) {
             console.log(currentAdmin);
-            navigate("/admin")
+            navigate("/")
         }
     },[currentAdmin,navigate])
 
