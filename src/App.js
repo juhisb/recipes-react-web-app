@@ -3,10 +3,12 @@ import {BrowserRouter} from "react-router-dom";
 import {Routes, Route} from "react-router";
 import {Provider} from "react-redux";
 import HomeScreen from "./components/HomeComponent/index";
+import ProfileScreen from "./components/ProfileComponent/index";
 import {configureStore}
   from '@reduxjs/toolkit';
 import userReducer from "./reducers/user-reducer";
 import CurrentUser from "./components/CurrentUser";
+import EditProfile from "./components/EditProfile/index";
 import Register from "./components/register";
 import Login from "./components/login";
 import adminReducer from "./reducers/admin-reducer";
@@ -38,6 +40,8 @@ function App() {
                   <Routes>
                     <Route index element={<HomeScreen/>}/>
                       <Route path="/register" element={<Register/>}/>
+                      <Route path="/profile" element={<ProfileScreen/>}/>
+                      <Route path="/edit-profile" element={<EditProfile/>}/>
                       <Route path="/login" element={<Login/>}/>
                       <Route path="/admin/login" element={<AdminLogin/>}/>
                       <Route path="/admin" element={<AdminHomePage/>}/>
