@@ -30,6 +30,14 @@ const Detail = () => {
                 <div className="container">
                     <h1>{recipeData.title}</h1>
                     <img className="w-50" src={recipeData.image} />
+                    <div className="card-body">
+                        <h5 className="card-title"><a
+                            className={`${userLikesAnime ? 'like-selected' : 'like-unselected'}`}>
+                            <span className="fa-solid fa-thumbs-up fa-2x" onClick={likeAnimeHandler}></span>
+                        </a>
+                            <span className="star-text ms-2">{} {animeLikes} likes</span></h5>
+
+                    </div>
                     <Card.Body>
 
                         {/*<Link to={'/detail/' + recipe.id}  className="stretched-link" >*/}

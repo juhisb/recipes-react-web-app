@@ -51,7 +51,7 @@ const NewReview = (
                 <hr />
 
                 <div>
-                    <textarea value={reviewByUser} placeholder="Share what you thought about the anime..."
+                    <textarea value={reviewByUser} placeholder="Share what you thought about the recipe..."
                               className="form-control border"
                               onChange={(event) => setReviewByUser(event.target.value)}>
                     </textarea>
