@@ -12,6 +12,7 @@ const SearchResults = (recipes, index) => {
                 <Link to={'/detail/' + recipe.id}  className="stretched-link" >
                     <Card.Title>{recipe.title}</Card.Title>
                 </Link>
+
                 {/*<Card.Text>{recipe.summary.substring(0, 100)} {recipe.summary.length >= 200 && '...'}</Card.Text>*/}
             </Card.Body>
         </Card>

@@ -1,0 +1,16 @@
+.card-img {
+    max-height: 350px;
+}
+
+/* unvisited link */
+a:link {
+    color: #860111;
+}
+
+a:link {
+    text-decoration: none;
+}
+
+.push-top {
+ margin-top: -320px;
+}
