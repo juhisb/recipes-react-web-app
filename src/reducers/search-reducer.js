@@ -18,6 +18,7 @@ const searchSlice = createSlice({
             state.searchList = []
         },
         [searchThunk.fulfilled]: (state, action) => {
+
             console.log(action.payload)
             state.searchList = action.payload
             state.loading = false

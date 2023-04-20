@@ -5,6 +5,7 @@ export const search = async (query) => {
     const response = await axios.get(url,
         {
             params: {
+
                 'query': query,
                 'number': 16
             },
@@ -14,6 +15,7 @@ export const search = async (query) => {
             }
         }
     )
+
     console.log(response.data)
     return response.data.results;
 }

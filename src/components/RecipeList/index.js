@@ -14,7 +14,6 @@ const RecipeList = () => {
     useEffect(() => {
         dispatch(recipesThunk())
     }, [])
-
     return (
         <>
             {
