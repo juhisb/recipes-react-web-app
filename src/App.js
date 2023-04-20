@@ -23,6 +23,8 @@ import Detail from "./components/Details";
 import Header from "./components/Header";
 import reviewReducer from "./reducers/review-reducer";
 import Following from "./components/Following";
+import followingReducer from "./reducers/following-reducer";
+import likedRecipeReducer from "./reducers/liked-recipe-reducer";
 
 const store = configureStore({
   reducer: {
@@ -32,7 +34,9 @@ const store = configureStore({
       reviewer: reviewerReducer,
       searchRecipes: searchReducer,
       recipeData: recipeDetailReducer,
-      review: reviewReducer
+      review: reviewReducer,
+      following: followingReducer,
+      likedRecipe: likedRecipeReducer,
   },
 });
 
