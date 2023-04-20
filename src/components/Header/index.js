@@ -32,14 +32,14 @@ const Header = () => {
             <Navbar expand="lg" bg="light" variant="light" collapseOnSelect>
                 <Container>
 
-                    <Navbar.Brand href="/">
-                        <img
-                            src={"../../../images/logo.png"}
-                            className="d-inline-block align-top logo"
-                            alt="MealTime"
-                        />
-                        {/*          <Navbar.Toggle aria-controls="responsive-navbar-nav" />*/}
-                    </Navbar.Brand>
+                        <Navbar.Brand href="/">
+                            <img
+                                src={"../../../images/logo.png"}
+                                className="d-inline-block align-top logo"
+                                alt="MealTime"
+                            />
+                  {/*          <Navbar.Toggle aria-controls="responsive-navbar-nav" />*/}
+                        </Navbar.Brand>
                     {/*<Navbar.Collapse id="responsive-navbar-nav">*/}
                     <Nav>
                         {

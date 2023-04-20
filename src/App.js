@@ -15,13 +15,13 @@ import AdminHomePage from "./components/AdminHome";
 import reviewerReducer from "./reducers/reviewer-reducer";
 import recipesReducer from "./reducers/recipes-reducer";
 import searchReducer from "./reducers/search-reducer";
-import Search from "./components/Search";
-import Header from "./components/Header";
-import likedRecipeReducer from "./reducers/liked-recipe-reducer";
-import followingReducer from "./reducers/following-reducer";
-import Following from "./components/Following";
 import UserSearch from "./components/UserSearch";
 import OtherUserProfile from "./components/OtherUserProfile";
+import SearchScreen from "./components/SearchComponent";
+import recipeDetailReducer from "./reducers/recipe-detail-reducer";
+import Detail from "./components/Details";
+import Header from "./components/Header";
+import reviewReducer from "./reducers/review-reducer";
 
 const store = configureStore({
   reducer: {
@@ -29,10 +29,9 @@ const store = configureStore({
       recipes: recipesReducer,
       adminData: adminReducer,
       reviewer: reviewerReducer,
-      search: searchReducer,
-      likedRecipe: likedRecipeReducer,
-      following: followingReducer,
-
+      searchRecipes: searchReducer,
+      recipeData: recipeDetailReducer,
+      review: reviewReducer
   },
 });
 
@@ -42,7 +41,7 @@ function App() {
         <BrowserRouter>
             <CurrentUser>
                 <Header/>
-                <div>
+                <div className="container">
                   <Routes>
                       <Route index element={<HomeScreen/>}/>
                       <Route path="/profile" element={<ProfileScreen/>}/>
@@ -53,7 +52,8 @@ function App() {
                       <Route path="/profile/:usid" element={<OtherUserProfile/>}/>
                       <Route path="/admin/login" element={<AdminLogin/>}/>
                       <Route path="/admin" element={<AdminHomePage/>}/>
-                      <Route path="/search" element={<Search/>}/>
+                      <Route path="/search" element={<SearchScreen/>}/>
+                      <Route path="/detail/:id" element={<Detail/>}/>
                   </Routes>
                 </div>
             </CurrentUser>

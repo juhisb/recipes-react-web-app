@@ -1,6 +1,7 @@
 import {createAsyncThunk} from "@reduxjs/toolkit";
-import {search} from "./search-service";
+
+import * as service from "./search-service";
 
 export const searchThunk = createAsyncThunk(
-    'search', async (query) =>  search(query)
+    'search', async (query) =>  await service.search(query)
 )

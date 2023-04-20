@@ -9,6 +9,7 @@ const reviewerSlice = createSlice(
         },
         extraReducers :{
             [findApprovedReviewerThunk.fulfilled]: (state, action) => {
+                console.log(action.payload);
                 state.currentReviewer = action.payload;
             }
         }
