@@ -6,13 +6,18 @@ import {recipeDetailThunk} from "../../services/recipe-detail-thunk";
 import {Link, useParams} from "react-router-dom";
 import NewReview from "../NewReview";
 import ReviewList from "../ReviewComponent";
+import {recipes} from "../../services/recipes-service";
+import PinDetail from "../PinComponent";
 
 const Detail = () => {
     const params = useParams();
     const { currentUser } = useSelector(state => state.userData);
     const { currentReviewer } = useSelector(state => state.reviewer);
     const {recipeData, loading} = useSelector(state => state.recipeData)
+
+
     const dispatch = useDispatch()
+
     console.log(currentUser)
     useEffect(() => {
         dispatch(recipeDetailThunk(params.id))
@@ -30,14 +35,7 @@ const Detail = () => {
                 <div className="container">
                     <h1>{recipeData.title}</h1>
                     <img className="w-50" src={recipeData.image} />
-                    <div className="card-body">
-                        <h5 className="card-title"><a
-                            className={`${userLikesAnime ? 'like-selected' : 'like-unselected'}`}>
-                            <span className="fa-solid fa-thumbs-up fa-2x" onClick={likeAnimeHandler}></span>
-                        </a>
-                            <span className="star-text ms-2">{} {animeLikes} likes</span></h5>
-
-                    </div>
+                    <PinDetail recipeId={params.id} recipeInfo={recipeData} />
                     <Card.Body>
 
                         {/*<Link to={'/detail/' + recipe.id}  className="stretched-link" >*/}

@@ -1,5 +1,11 @@
 import {createAsyncThunk} from "@reduxjs/toolkit";
-import {addPinnedRecipe, findAllPinnedRecipes, findOtherAllPinnedRecipes, removePinnedRecipe} from "./pinned-recipe-service";
+import {
+    addPinnedRecipe,
+    findAllPinnedRecipes,
+    findOtherAllPinnedRecipes,
+    getPinCount,
+    removePinnedRecipe
+} from "./pinned-recipe-service";
 
 export const findAllPinnedRecipeThunk = createAsyncThunk(
     'findAllPinnedRecipe',
@@ -22,4 +28,5 @@ export const removePinnedRecipeThunk = createAsyncThunk(
     'removePinnedRecipe',
     async (userUnpinnedRecipe) => await removePinnedRecipe(userUnpinnedRecipe)
 )
+
 

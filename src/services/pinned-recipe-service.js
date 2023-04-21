@@ -26,14 +26,12 @@ export const removePinnedRecipe = async (userUnpinnedRecipe) => {
     return response.data
 }
 
-
-
-export const getPinCount = async (RecipeId) => {
-    const response = await api.get(`${API_BASE}/pinCount/${RecipeId}`, RecipeId);
+export const getPinCount = async (recipeId) => {
+    const response = await api.get(`${API_BASE}/pinCount/${recipeId}`, recipeId);
     return response.data.length
 }
 
 export const getUserPinnedRecipe = async (userRecipe) => {
-    const response = await api.get(`${API_BASE}/userPinnedRecipe/${userRecipe.userId}/${userRecipe.RecipeId}`, userRecipe);
+    const response = await api.get(`${API_BASE}/userPinnedRecipe/${userRecipe.userId}/${userRecipe.recipeId}`, userRecipe);
     return response.data
 }
