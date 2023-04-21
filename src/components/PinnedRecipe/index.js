@@ -4,15 +4,15 @@ import {useDispatch, useSelector} from "react-redux";
 import {findAllPinnedRecipeThunk} from "../../services/pinned-recipe-thunk";
 import APP_URL from "../../constants";
 import {Link} from "react-router-dom";
-import CurrentUser from "../CurrentUser";
 import {current} from "@reduxjs/toolkit";
 
 const LikedRecipe = () => {
     const {currentUser} = useSelector((state) => state.userData)
+    const {currentAdmin} = useSelector((state) => state.adminData)
     const {pinnedRecipeList} = useSelector((state) => state.pinnedRecipe)
     const dispatch = useDispatch()
     useEffect(() => {
-        dispatch(findAllPinnedRecipeThunk(currentUser._id))
+        dispatch(findAllPinnedRecipeThunk(currentUser == null ? currentAdmin._id: currentUser._id))
     }, [])
 
     return (

@@ -7,7 +7,10 @@ import HeaderBar from "../Header";
 
 const EditProfile = (editProfile) => {
 
-    const {currentUser} = useSelector(state => state.userData);
+    let {currentUser} = useSelector(state => state.userData);
+    const {currentAdmin} = useSelector(state => state.adminData)
+    currentUser = (currentUser == null ? currentAdmin: currentUser);
+
     const [firstName, setFirstName] = useState(currentUser.firstName);
     const [lastName, setLastName] = useState(currentUser.lastName);
     const [email, setEmail] = useState(currentUser.email);
