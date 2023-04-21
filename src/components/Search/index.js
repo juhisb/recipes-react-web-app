@@ -9,7 +9,8 @@ import SearchResults from "../SearchResults";
 
 const Search = () => {
     const [searchQuery, setSearchQuery] = useState('')
-    const {searchList} = useSelector((state) => state.search)
+
+    const {searchList, loading} = useSelector(state => state.searchRecipes)
     const dispatch = useDispatch()
     return (
         <>
@@ -18,7 +19,8 @@ const Search = () => {
                     <input placeholder="Search recipes"
                            className="form-control "
                            onChange={(e) => {
-                               if (e.target.value === '') {
+
+                               if (searchList.length > 0 && e.target.value === '') {
                                    dispatch(resetSearch());
                                    dispatch(recipesThunk())
                                }
@@ -31,6 +33,7 @@ const Search = () => {
                     <button
                         className="btn btn-dark "
                         onClick={() => {
+
                             dispatch(hideRecipes())
                             dispatch(searchThunk(searchQuery))
                         }}>
