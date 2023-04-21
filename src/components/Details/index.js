@@ -6,13 +6,18 @@ import {recipeDetailThunk} from "../../services/recipe-detail-thunk";
 import {Link, useParams} from "react-router-dom";
 import NewReview from "../NewReview";
 import ReviewList from "../ReviewComponent";
+import {recipes} from "../../services/recipes-service";
+import PinDetail from "../PinComponent";
 
 const Detail = () => {
     const params = useParams();
     const { currentUser } = useSelector(state => state.userData);
     const { currentReviewer } = useSelector(state => state.reviewer);
     const {recipeData, loading} = useSelector(state => state.recipeData)
+
+
     const dispatch = useDispatch()
+
     console.log(currentUser)
     useEffect(() => {
         dispatch(recipeDetailThunk(params.id))
@@ -30,6 +35,7 @@ const Detail = () => {
                 <div className="container">
                     <h1>{recipeData.title}</h1>
                     <img className="w-50" src={recipeData.image} />
+                    <PinDetail recipeId={params.id} recipeInfo={recipeData} />
                     <Card.Body>
 
                         {/*<Link to={'/detail/' + recipe.id}  className="stretched-link" >*/}

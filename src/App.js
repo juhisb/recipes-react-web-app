@@ -25,7 +25,7 @@ import Header from "./components/Header";
 import reviewReducer from "./reducers/review-reducer";
 import Following from "./components/Following";
 import followingReducer from "./reducers/following-reducer";
-import likedRecipeReducer from "./reducers/liked-recipe-reducer";
+import pinnedRecipeReducer from "./reducers/pinned-recipe-reducer";
 
 const store = configureStore({
   reducer: {
@@ -37,7 +37,7 @@ const store = configureStore({
       recipeData: recipeDetailReducer,
       review: reviewReducer,
       following: followingReducer,
-      likedRecipe: likedRecipeReducer,
+      pinnedRecipe: pinnedRecipeReducer
   },
 });
 
