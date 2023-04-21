@@ -27,6 +27,10 @@ const ReviewList = () => {
                     ))}
                 </Row>
             }
+            {
+                reviewList.length == 0 &&
+                <p>Nothing Reviewed!!</p>
+            }
         </div></>
     );
 };
