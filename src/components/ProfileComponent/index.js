@@ -4,7 +4,7 @@ import "./index.css"
 import {profileThunk} from "../../services/user-thunk";
 import {useNavigate} from "react-router";
 import {Link} from "react-router-dom";
-// import LikedRecipe from "../LikedRecipe";
+
 import Following from "../Following";
 import UserReview from "../UserReview";
 
