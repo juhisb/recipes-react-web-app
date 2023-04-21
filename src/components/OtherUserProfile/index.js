@@ -9,7 +9,7 @@ import HeaderBar from "../Header";
 import Following from "../Following";
 import OtherFollowing from "../OtherFollowing";
 import {Card, Col, Row} from "react-bootstrap";
-import {findOtherAllLikedRecipeThunk} from "../../services/liked-recipe-thunk";
+import {findOtherAllPinnedRecipeThunk} from "../../services/pinned-recipe-thunk";
 
 const OtherUserProfile = () => {
     const params = useParams();
@@ -21,14 +21,14 @@ const OtherUserProfile = () => {
     const {currentUser} = useSelector(state => state.userData)
     const {followingList, followers,loading} = useSelector(state => state.following)
     const [checkFollowingData, setFollowingData] = useState(false);
-    const {otherLikedRecipeList} = useSelector((state) => state.likedRecipe)
+    const {otherPinnedRecipeList} = useSelector((state) => state.pinnedRecipe)
 
     useEffect(() => {
         const getDataFromServer = async () => {
             const userData = await findUser(otherUser)
             setUserData(userData);
         };
-        dispatch(findOtherAllLikedRecipeThunk(otherUser))
+        dispatch(findOtherAllPinnedRecipeThunk(otherUser))
         getDataFromServer();
 
     }, [])
@@ -135,7 +135,7 @@ const OtherUserProfile = () => {
                         <p className="title mt-5 pt-5"> Recipes They Liked </p>
                         <div>
                             {/*<Row class="mt-5 justify-content-center align-items-stretch">*/}
-                            {/*    {otherLikedRecipeList?.map((anime) => (*/}
+                            {/*    {otherPinnedRecipeList?.map((anime) => (*/}
                             {/*        <Col key={anime.animeId} xs={12} md={4} lg={3} sm={6}>*/}
                             {/*            <Card className="shadow p-0 mb-5 bg-white rounded">*/}
                             {/*                <Card.Img src={anime.animeImage} />*/}
