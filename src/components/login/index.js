@@ -5,7 +5,6 @@ import {loginThunk} from "../../services/user-thunk";
 import {useNavigate} from "react-router";
 import {Link} from "react-router-dom";
 import "./index.css"
-// import HeaderBar from "../Header";
 
 const Login = () => {
     const [username, setUsername] = useState('')
@@ -34,7 +33,6 @@ const Login = () => {
 
     return (
         <>
-            {/*<HeaderBar/>*/}
             <div className="Auth-form-container">
             <div className="Auth-form">
 

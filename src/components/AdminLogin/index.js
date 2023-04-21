@@ -1,8 +1,7 @@
 import React, {useEffect, useState} from "react";
 import {useDispatch, useSelector} from "react-redux";
-import {adminLoginThunk, loginThunk} from "../../services/admin-thunk";
+import {adminLoginThunk} from "../../services/admin-thunk";
 import {useNavigate} from "react-router";
-// import HeaderBar from "../Header";
 
 const AdminLogin = () => {
 
@@ -33,7 +32,6 @@ const AdminLogin = () => {
 
     return(
         <>
-            {/*<HeaderBar/>*/}
             <div className="Auth-form-container">
                 <div className="Auth-form">
                     <div className="Auth-form-content">
