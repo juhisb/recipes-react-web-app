@@ -7,6 +7,7 @@ import {Link} from "react-router-dom";
 
 import Following from "../Following";
 import UserReview from "../UserReview";
+import PinnedRecipe from "../PinnedRecipe";
 
 
 const ProfileScreen = () => {
@@ -73,11 +74,11 @@ const ProfileScreen = () => {
                         </div>
 
                     </div>
-                    {/*<p className="title">Recipies You Liked </p>*/}
-                    {/*<LikedRecipe/>*/}
+                    <p className="title"><h3>Recipies You Liked </h3></p>
+                    <PinnedRecipe/>
 
                     {<>
-                        <p className="title"> Reviews Posted </p>
+                        <p className="title"> <h3>Reviews Posted</h3> </p>
                         <UserReview/>
                     </> }
 
