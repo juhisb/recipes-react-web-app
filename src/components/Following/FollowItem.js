@@ -12,7 +12,6 @@ const FollowItemList = ({follow}) => {
 
     useEffect(() => {
         const getDataFromServer = async () => {
-            console.log("getDataFromServer !!!!!!!!!!!!!!!!!!! ")
             const userData = await findUser(follow.followingId)
             setUserData(userData);
         }

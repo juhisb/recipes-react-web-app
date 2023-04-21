@@ -12,6 +12,7 @@ import PinnedRecipe from "../PinnedRecipe";
 
 const ProfileScreen = () => {
     const {currentUser} = useSelector(state => state.userData)
+    const {currentAdmin} = useSelector(state => state.adminData)
     const { currentReviewer, pendingList } = useSelector(state => state.reviewer);
     const [editProfile, setEditProfile] = useState(false);
     const navigate = useNavigate();
@@ -20,7 +21,6 @@ const ProfileScreen = () => {
         setEditProfile(true);
         navigate("/edit-profile");
     }
-
     return (
         <>
             <div className="row mx-5">
@@ -58,7 +58,7 @@ const ProfileScreen = () => {
                     <div className="p-2 name">
                         <div className="row">
                             <div className="col-8">
-                                <h1 className=" text-secondary">@{currentUser.username} </h1>
+                                <h1 className=" text-secondary">@{currentUser == null? currentAdmin.username: currentUser.username} </h1>
                             </div>
                             <div className="col-4">
                                 <button className="btn btn-dark float-end" onClick={editClickHandler}>
@@ -67,19 +67,22 @@ const ProfileScreen = () => {
                             </div>
                         </div>
                         <div className="m-3 text-secondary">
-                            <h4 className="title"> Name : {currentUser.firstName} {currentUser.lastName}</h4>
-                            <h4 className="title"> Email Id : {currentUser.email} </h4>
-                            <h4 className="title"> Phone Number : {currentUser.phoneNumber} </h4>
-                            <h4 className="title"> Account Type : {currentUser.accountType} </h4>
+                            <h4 className="title"> Name : {currentUser == null ? currentAdmin.firstName: currentUser.firstName}
+                                {currentUser == null ? currentAdmin.lastName: currentUser.lastName}</h4>
+                            <h4 className="title"> Email Id : {currentUser == null ? currentAdmin.email: currentUser.email} </h4>
+                            <h4 className="title"> Phone Number : {currentUser == null ? currentAdmin.phoneNumber: currentUser.phoneNumber} </h4>
+                            <h4 className="title"> Account Type : {currentUser == null ? currentAdmin.accountType: currentUser.accountType} </h4>
                         </div>
 
                     </div>
-                    <p className="title"><h3>Recipies You Liked </h3></p>
+                    <h3><p className="title">Recipes You Liked</p> </h3>
                     <PinnedRecipe/>
 
+                    <h3> <p className="title">Reviews Posted</p></h3>
+                    <UserReview/>
+
                     {<>
-                        <p className="title"> <h3>Reviews Posted</h3> </p>
-                        <UserReview/>
+
                     </> }
 
                 </div>

@@ -8,12 +8,13 @@ const FollowingItem = () => {
 
 
     const {currentUser} = useSelector(state => state.userData)
+    const {currentAdmin} = useSelector(state => state.adminData)
     const dispatch = useDispatch();
 
     const {followingList, followers, loading} = useSelector(state => state.following)
 
     useEffect(() => {
-        dispatch(findAllFollowersThunk(currentUser._id))
+        dispatch(findAllFollowersThunk(currentUser == null ? currentAdmin._id: currentUser._id))
 
     } , []);
 

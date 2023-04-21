@@ -10,9 +10,10 @@ import { Row, Col } from "react-bootstrap";
 const ReviewList = () => {
     const dispatch = useDispatch();
     const { currentUser } = useSelector(state => state.userData);
+    const {currentAdmin} = useSelector((state) => state.adminData)
     const { reviewList } = useSelector(state => state.review);
     useEffect(() => {
-        dispatch(findAllReviewsByUserThunk(currentUser._id))
+        dispatch(findAllReviewsByUserThunk(currentUser == null ? currentAdmin._id: currentUser._id))
         console.log('review it', reviewList)
     }, [])
 
