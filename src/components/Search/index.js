@@ -1,17 +1,29 @@
 import {useDispatch, useSelector} from "react-redux";
-import React, {useState} from "react";
+import React, {useEffect, useState} from "react";
 import {searchThunk} from "../../services/search-thunk";
 import {Row} from "react-bootstrap";
 import {resetSearch} from "../../reducers/search-reducer";
 import {hideRecipes} from "../../reducers/recipes-reducer";
 import {recipesThunk} from "../../services/recipes-thunk";
 import SearchResults from "../SearchResults";
+import {useNavigate} from "react-router";
 
-const Search = () => {
-    const [searchQuery, setSearchQuery] = useState('')
-
+const Search = ({query}) => {
+    const [searchQuery, setSearchQuery] = useState(query)
+    const navigate = useNavigate();
     const {searchList, loading} = useSelector(state => state.searchRecipes)
     const dispatch = useDispatch()
+    console.log(query)
+    useEffect(() => {
+        const load = async () => {
+            if (query !== '') {
+                await dispatch(hideRecipes());
+                await dispatch(searchThunk(query));
+                setSearchQuery(query)
+            }
+        }
+        load();
+    },[query])
     return (
         <>
             <div className="row mx-auto">
@@ -33,9 +45,9 @@ const Search = () => {
                     <button
                         className="btn btn-dark "
                         onClick={() => {
-
-                            dispatch(hideRecipes())
-                            dispatch(searchThunk(searchQuery))
+                            navigate(`/search/${searchQuery}`)
+                            // dispatch(hideRecipes())
+                            // dispatch(searchThunk(searchQuery))
                         }}>
                         Search
                     </button>

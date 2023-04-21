@@ -59,7 +59,7 @@ function App() {
                       <Route path="/profile/:usid" element={<OtherUserProfile/>}/>
                       <Route path="/admin/login" element={<AdminLogin/>}/>
                       <Route path="/admin" element={<AdminHomePage/>}/>
-                      <Route path="/search" element={<SearchScreen/>}/>
+                      <Route path="/search/:query?" element={<SearchScreen/>}/>
                       <Route path="/detail/:id" element={<Detail/>}/>
                   </Routes>
                 </div>
