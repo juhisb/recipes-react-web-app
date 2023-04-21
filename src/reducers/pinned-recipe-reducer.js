@@ -31,7 +31,6 @@ const pinnedRecipeSlice = createSlice({
         [findOtherAllPinnedRecipeThunk.fulfilled]: (state, action) => {
             state.otherPinnedRecipeList = action.payload
             state.loading = false
-            console.log(state.otherPinnedRecipeList)
         }
     }
 })

@@ -26,7 +26,6 @@ export const findReviewer = async (rId) => {
 }
 
 export const findApprovedReviewer = async (username) => {
-    console.log("FINDING reviewer !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! ",username);
     const response = await api.get(`${API_BASE}/user/${username}`);
     return response.data
 }

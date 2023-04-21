@@ -24,6 +24,7 @@ const adminSlice = createSlice({
             [adminProfileThunk.fulfilled]: (state, action) => {
                 state.currentAdmin = action.payload
                 state.currentAdmin = {...state.currentAdmin, currentAdmin: action.payload}
+
             },
             [adminProfileThunk.rejected]: (state, action) => {
                 state.currentAdmin = null;

@@ -4,9 +4,7 @@ import {findUser} from "../../services/user-service";
 import {useDispatch, useSelector} from "react-redux";
 import {addFollowerThunk, findAllFollowersThunk, unfollowThunk} from "../../services/following-thunk";
 import {useNavigate} from "react-router";
-import {unfollow} from "../../services/following-service";
-import HeaderBar from "../Header";
-import Following from "../Following";
+
 import OtherFollowing from "../OtherFollowing";
 import {Card, Col, Row} from "react-bootstrap";
 import {findOtherAllPinnedRecipeThunk} from "../../services/pinned-recipe-thunk";
@@ -18,10 +16,12 @@ const OtherUserProfile = () => {
     const { currentReviewer, pendingList } = useSelector(state => state.reviewer);
     const dispatch = useDispatch();
     const navigate = useNavigate();
-    const {currentUser} = useSelector(state => state.userData)
+    let {currentUser} = useSelector(state => state.userData)
+    const {currentAdmin} = useSelector(state => state.adminData)
     const {followingList, followers,loading} = useSelector(state => state.following)
     const [checkFollowingData, setFollowingData] = useState(false);
     const {otherPinnedRecipeList} = useSelector((state) => state.pinnedRecipe)
+    currentUser = currentUser == null ? currentAdmin: currentUser;
 
     useEffect(() => {
         const getDataFromServer = async () => {
@@ -37,8 +37,8 @@ const OtherUserProfile = () => {
 
         const checkFollowing = async () => {
             followers.forEach(function (key, value) {
-                console.log("foll" + key.followingId)
-                console.log("foll" + user._id)
+
+
                 if (key.followingId === user._id) {
                     setFollowingData(true);
                 }
@@ -132,22 +132,22 @@ const OtherUserProfile = () => {
 
                         </div>
 
-                        <p className="title mt-5 pt-5"> Recipes They Liked </p>
+                        <h3><p className="title mt-5 pt-5"> Recipes They Liked </p></h3>
                         <div>
-                            {/*<Row class="mt-5 justify-content-center align-items-stretch">*/}
-                            {/*    {otherPinnedRecipeList?.map((anime) => (*/}
-                            {/*        <Col key={anime.animeId} xs={12} md={4} lg={3} sm={6}>*/}
-                            {/*            <Card className="shadow p-0 mb-5 bg-white rounded">*/}
-                            {/*                <Card.Img src={anime.animeImage} />*/}
-                            {/*                <Card.Body>*/}
-                            {/*                    <Link to={'/detail/' + anime.mal_id}  className="stretched-link" >*/}
-                            {/*                        <Card.Title>{anime.animeTitle}</Card.Title>*/}
-                            {/*                    </Link>*/}
-                            {/*                </Card.Body>*/}
-                            {/*            </Card>*/}
-                            {/*        </Col>*/}
-                            {/*    ))}*/}
-                            {/*</Row>*/}
+                            <Row className="mt-5 justify-content-center align-items-stretch">
+                                {otherPinnedRecipeList?.map((recipe) => (
+                                    <Col key={recipe.recipeId} xs={12} md={4} lg={3} sm={6}>
+                                        <Card className="shadow p-0 mb-5 bg-white rounded">
+                                            <Card.Img src={recipe.recipeImage} />
+                                            <Card.Body>
+                                                <Link to={'/detail/' + recipe.recipeId}  className="stretched-link" >
+                                                    <Card.Title>{recipe.recipeTitle}</Card.Title>
+                                                </Link>
+                                            </Card.Body>
+                                        </Card>
+                                    </Col>
+                                ))}
+                            </Row>
                         </div>
 
 
