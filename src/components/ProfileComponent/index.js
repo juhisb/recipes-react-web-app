@@ -11,12 +11,13 @@ import PinnedRecipe from "../PinnedRecipe";
 
 
 const ProfileScreen = () => {
-    const {currentUser} = useSelector(state => state.userData)
+    let {currentUser} = useSelector(state => state.userData)
     const {currentAdmin} = useSelector(state => state.adminData)
     const { currentReviewer, pendingList } = useSelector(state => state.reviewer);
     const [editProfile, setEditProfile] = useState(false);
     const navigate = useNavigate();
     const [input, setInput] = useState();
+    currentUser = currentUser == null ? currentAdmin: currentUser;
     const editClickHandler = () => {
         setEditProfile(true);
         navigate("/edit-profile");
@@ -78,12 +79,17 @@ const ProfileScreen = () => {
                     <h3><p className="title">Recipes You Liked</p> </h3>
                     <PinnedRecipe/>
 
-                    <h3> <p className="title">Reviews Posted</p></h3>
-                    <UserReview/>
+                    {
+                        currentUser.accountType != "USER" &&
+                        <>
+                            <h3> <p className="title">Reviews Posted</p></h3>
+                            <UserReview/>
+                        </>
 
-                    {<>
+                    }
 
-                    </> }
+
+
 
                 </div>
                 <div className="col">
