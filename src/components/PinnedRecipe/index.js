@@ -17,7 +17,7 @@ const LikedRecipe = () => {
 
     return (
         <div>
-            <Row className="mt-5 justify-content-center align-items-stretch">
+            <Row className=" justify-content-center align-items-stretch">
                 {pinnedRecipeList?.map((recipe) => (
                     <Col key={recipe.recipeId} xs={12} md={4} lg={3} sm={6}>
                         <Card className="shadow p-0 mb-5 bg-white rounded">

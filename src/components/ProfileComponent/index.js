@@ -24,9 +24,12 @@ const ProfileScreen = () => {
     }
     return (
         <>
+
+        <div className = "bgimage">
+
             <div className="row mx-5">
-                <div className="row my-4">
-                    <div className="col-11 ">
+                <div className="row my-4 ">
+                    <div className="col-11 col-xxl-11 col-xl-11 col-lg-10 col-md-10 col-sm-10">
                         <input
                             type="text"
                             className="form-control"
@@ -35,7 +38,7 @@ const ProfileScreen = () => {
                             onInput={(e) => setInput(e.target.value)}
                         />
                     </div>
-                    <div className="col float-end  pe-0 me-0">
+                    <div className="col col-xxl-1 col-xl-1 col-lg-2 col-md-2 col-sm-2 float-end  pe-0 me-0">
                         <Link to={`/searchUsers/${input}`}>
                             <button className="btn btn-dark">
                                 Search
@@ -45,7 +48,7 @@ const ProfileScreen = () => {
 
                 </div>
 
-                <div className="col-9">
+                <div className="col-xxl-9 col-xl-9 col-lg-9 col-md-12 col-sm-12">
 
 
                     <div className="position-relative ">
@@ -58,26 +61,34 @@ const ProfileScreen = () => {
                     </div>
                     <div className="p-2 name">
                         <div className="row">
-                            <div className="col-8">
-                                <h1 className=" text-secondary">@{currentUser == null? currentAdmin.username: currentUser.username} </h1>
+                            <div className="col-8 col-sm-9">
+                                <h1 className=" text-dark">@{currentUser == null? currentAdmin.username: currentUser.username} </h1>
                             </div>
-                            <div className="col-4">
+                            <div className="col-4 col-sm-3">
                                 <button className="btn btn-dark float-end" onClick={editClickHandler}>
                                     Edit Profile
                                 </button>
                             </div>
                         </div>
-                        <div className="m-3 text-secondary">
-                            <h4 className="title"> Name : {currentUser == null ? currentAdmin.firstName: currentUser.firstName}
+                        <div className="m-1 text-dark  text-left">
+                            <h4 className="title"> {currentUser == null ? currentAdmin.firstName: currentUser.firstName}
                                 {currentUser == null ? currentAdmin.lastName: currentUser.lastName}</h4>
-                            <h4 className="title"> Email Id : {currentUser == null ? currentAdmin.email: currentUser.email} </h4>
-                            <h4 className="title"> Phone Number : {currentUser == null ? currentAdmin.phoneNumber: currentUser.phoneNumber} </h4>
-                            <h4 className="title"> Account Type : {currentUser == null ? currentAdmin.accountType: currentUser.accountType} </h4>
+                            <p className="title text-dark"> Email Id : {currentUser == null ? currentAdmin.email: currentUser.email}
+                             <p className="title"> Phone Number : {currentUser == null ? currentAdmin.phoneNumber: currentUser.phoneNumber}
+                              <p className="title"> Account Type : {currentUser == null ? currentAdmin.accountType: currentUser.accountType} </p>
+                              </p>
+
+                             </p>
+
+
                         </div>
 
                     </div>
-                    <h3><p className="title">Recipes You Liked</p> </h3>
+
+                    <p><h4 className="title pt-4">Recipes You Liked</h4>
                     <PinnedRecipe/>
+                    </p>
+
 
                     {
                         currentUser.accountType != "USER" &&
@@ -87,15 +98,13 @@ const ProfileScreen = () => {
                         </>
 
                     }
-
-
-
-
                 </div>
-                <div className="col">
+                <div className="d-none d-lg-block col-lg-3 col-xl-3 col-xxl-3   ">
                     <Following/>
                 </div>
             </div>
+
+        </div>
 
         </>
     );
