@@ -47,10 +47,10 @@ const Register = () => {
         }
     }
     return (
-        <>
-        <div className="Auth-form-container">
+        <div className="mt-3">
+        <div className="Auth-form-container ">
 
-            <div className="Auth-form">
+            <div className="Auth-form mt-4">
                 <div className="Auth-form-content">
                     {
                         error &&
@@ -58,10 +58,10 @@ const Register = () => {
                             {error}
                         </div>
                     }
-                    <h3 className="Auth-form-title">Sign Up</h3>
+                    <h3 className="Auth-form-title primary-text">Sign Up</h3>
                     <div className="text-center">
                         Already registered?{" "}
-                        <Link to="../login">Sign In</Link>
+                        <Link className="primary-text" to="../login">Sign In</Link>
                     </div>
                     <div className="form-group mt-2">
                         <label>Username</label>
@@ -136,7 +136,7 @@ const Register = () => {
                     <div className="d-grid gap-2 mt-4">
                         <button
                             type="submit"
-                            className="btn btn-dark"
+                            className="btn primary-bg"
                             onClick={handleRegistrationBtn}>
                             Submit
                         </button>
@@ -144,7 +144,7 @@ const Register = () => {
                 </div>
             </div>
         </div>
-        </>
+        </div>
     )
 }
 

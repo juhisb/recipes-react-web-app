@@ -27,21 +27,21 @@ const Search = ({query}) => {
     return (
         <>
             <div className="row mx-auto">
-                <div className="col-11">
+                <div className="col-10 col-md-11">
                     <input placeholder="Search recipes"
                            className="form-control "
                            onChange={(e) => {
 
-                               if (searchList.length > 0 && e.target.value === '') {
-                                   dispatch(resetSearch());
-                                   dispatch(recipesThunk())
-                               }
+                               // if (searchList.length > 0 && e.target.value === '') {
+                               //     dispatch(resetSearch());
+                               //     dispatch(recipesThunk())
+                               // }
                                setSearchQuery(e.target.value)
                            }}
                            value={searchQuery}/>
                 </div>
 
-                <div className="col-1 float-end">
+                <div className="col-2 col-md-1">
                     <button
                         className="btn btn-dark "
                         onClick={() => {
@@ -54,10 +54,10 @@ const Search = ({query}) => {
                 </div>
             </div>
 
-            <div className="d-flex justify-content-end mt-5">
-                <Row>
+            <div >
+                <Row className="mt-3 justify-content-center">
                     {
-                        (searchQuery!=='') && searchList && searchList.map((r, a) =>
+                        (query!=='') && searchList && searchList.map((r, a) =>
                             <SearchResults recipes={r} index={a}/>
                         )}
                 </Row>

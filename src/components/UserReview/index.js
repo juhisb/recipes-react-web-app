@@ -20,16 +20,16 @@ const ReviewList = () => {
     return (
         <><div>
             {reviewList &&
-                <Row className="mt-5 justify-content-center align-items-stretch">
+                <Row className="mt-3 align-items-stretch">
                     {reviewList.map(item => (
-                        <Col xs={12} md={4} lg={3} sm={6}>
+                        <Col xs={12} md={4} lg={3} sm={6} className="d-flex align-items-stretch">
                             <ReviewItem key={item._id} rev={item} />
                         </Col>
                     ))}
                 </Row>
             }
             {
-                reviewList.length == 0 &&
+                reviewList.length === 0 &&
                 <p>Nothing Reviewed!!</p>
             }
         </div></>

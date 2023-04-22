@@ -1,0 +1,653 @@
+{
+  "vegetarian": false,
+  "vegan": false,
+  "glutenFree": false,
+  "dairyFree": false,
+  "veryHealthy": false,
+  "cheap": false,
+  "veryPopular": false,
+  "sustainable": false,
+  "lowFodmap": false,
+  "weightWatcherSmartPoints": 47,
+  "gaps": "no",
+  "preparationMinutes": -1,
+  "cookingMinutes": -1,
+  "aggregateLikes": 5,
+  "healthScore": 14,
+  "creditsText": "Foodista.com – The Cooking Encyclopedia Everyone Can Edit",
+  "license": "CC BY 3.0",
+  "sourceName": "Foodista",
+  "pricePerServing": 233.7,
+  "extendedIngredients": [
+    {
+      "id": 1017,
+      "aisle": "Cheese",
+      "image": "cream-cheese.jpg",
+      "consistency": "SOLID",
+      "name": "cream cheese",
+      "nameClean": "cream cheese",
+      "original": "24 ounces Cream cheese",
+      "originalName": "Cream cheese",
+      "amount": 24,
+      "unit": "ounces",
+      "meta": [],
+      "measures": {
+        "us": {
+          "amount": 24,
+          "unitShort": "oz",
+          "unitLong": "ounces"
+        },
+        "metric": {
+          "amount": 680.389,
+          "unitShort": "g",
+          "unitLong": "grams"
+        }
+      }
+    },
+    {
+      "id": 10116098,
+      "aisle": "Nut butters, Jams, and Honey",
+      "image": "peanut-butter.png",
+      "consistency": "SOLID",
+      "name": "this is my favorite! rich and creamy",
+      "nameClean": "creamy peanut butter",
+      "original": "6This is my favorite! Rich and creamy.",
+      "originalName": "6This is my favorite! Rich and creamy",
+      "amount": 8,
+      "unit": "servings",
+      "meta": [],
+      "measures": {
+        "us": {
+          "amount": 8,
+          "unitShort": "servings",
+          "unitLong": "servings"
+        },
+        "metric": {
+          "amount": 8,
+          "unitShort": "servings",
+          "unitLong": "servings"
+        }
+      }
+    },
+    {
+      "id": 20081,
+      "aisle": "Baking",
+      "image": "flour.png",
+      "consistency": "SOLID",
+      "name": "flour",
+      "nameClean": "wheat flour",
+      "original": "2 1/4 cups all-purpose flour",
+      "originalName": "all-purpose flour",
+      "amount": 2.25,
+      "unit": "cups",
+      "meta": [
+        "all-purpose"
+      ],
+      "measures": {
+        "us": {
+          "amount": 2.25,
+          "unitShort": "cups",
+          "unitLong": "cups"
+        },
+        "metric": {
+          "amount": 532.323,
+          "unitShort": "ml",
+          "unitLong": "milliliters"
+        }
+      }
+    },
+    {
+      "id": 19184,
+      "aisle": "Baking",
+      "image": "chocolate-pudding.jpg",
+      "consistency": "SOLID",
+      "name": "chocolate pudding",
+      "nameClean": "instant chocolate pudding mix",
+      "original": "1 small box instant chocolate pudding",
+      "originalName": "box instant chocolate pudding",
+      "amount": 1,
+      "unit": "small",
+      "meta": [
+        "instant"
+      ],
+      "measures": {
+        "us": {
+          "amount": 1,
+          "unitShort": "small",
+          "unitLong": "small"
+        },
+        "metric": {
+          "amount": 1,
+          "unitShort": "small",
+          "unitLong": "small"
+        }
+      }
+    },
+    {
+      "id": 19081,
+      "aisle": "Sweet Snacks",
+      "image": "milk-chocolate.jpg",
+      "consistency": "SOLID",
+      "name": "[ almond extract.1 box chocolate pudding1 box vanilla pudding3 cups milk1 container cool whip1 milk",
+      "nameClean": "milk chocolate",
+      "original": "1/4 cup Amaretto liqueur or [ almond extract.1 small box instant chocolate pudding1 small box instant vanilla pudding3 cups whole milk1 large container cool whip1 milk chocolate shavings",
+      "originalName": "Amaretto liqueur or [ almond extract.1 small box instant chocolate pudding1 small box instant vanilla pudding3 cups whole milk1 large container cool whip1 milk chocolate shavings",
+      "amount": 0.25,
+      "unit": "cup",
+      "meta": [
+        "whole",
+        "instant"
+      ],
+      "measures": {
+        "us": {
+          "amount": 0.25,
+          "unitShort": "cups",
+          "unitLong": "cups"
+        },
+        "metric": {
+          "amount": 59.147,
+          "unitShort": "ml",
+          "unitLong": "milliliters"
+        }
+      }
+    },
+    {
+      "id": 19206,
+      "aisle": "Baking",
+      "image": "vanilla-pudding.png",
+      "consistency": "SOLID",
+      "name": "vanilla pudding",
+      "nameClean": "instant vanilla pudding mix",
+      "original": "1 small box instant vanilla pudding",
+      "originalName": "box instant vanilla pudding",
+      "amount": 1,
+      "unit": "small",
+      "meta": [
+        "instant"
+      ],
+      "measures": {
+        "us": {
+          "amount": 1,
+          "unitShort": "small",
+          "unitLong": "small"
+        },
+        "metric": {
+          "amount": 1,
+          "unitShort": "small",
+          "unitLong": "small"
+        }
+      }
+    },
+    {
+      "id": 10219903,
+      "aisle": "Baking",
+      "image": "chocolate-curls.jpg",
+      "consistency": "SOLID",
+      "name": "milk chocolate shavings",
+      "nameClean": "chocolate shavings",
+      "original": "1 milk chocolate shavings",
+      "originalName": "milk chocolate shavings",
+      "amount": 1,
+      "unit": "",
+      "meta": [],
+      "measures": {
+        "us": {
+          "amount": 1,
+          "unitShort": "",
+          "unitLong": ""
+        },
+        "metric": {
+          "amount": 1,
+          "unitShort": "",
+          "unitLong": ""
+        }
+      }
+    },
+    {
+      "id": 19081,
+      "aisle": "Sweet Snacks",
+      "image": "milk-chocolate.jpg",
+      "consistency": "SOLID",
+      "name": "shave milk chocolate over the top. let set",
+      "nameClean": "milk chocolate",
+      "original": "5Shave milk chocolate over the top. Let set for 8 hours for the best flavor.",
+      "originalName": "5Shave milk chocolate over the top. Let set for 8 hours for the best flavor",
+      "amount": 8,
+      "unit": "servings",
+      "meta": [
+        "for 8 hours for the best flavor."
+      ],
+      "measures": {
+        "us": {
+          "amount": 8,
+          "unitShort": "servings",
+          "unitLong": "servings"
+        },
+        "metric": {
+          "amount": 8,
+          "unitShort": "servings",
+          "unitLong": "servings"
+        }
+      }
+    },
+    {
+      "id": 1200,
+      "aisle": "Milk, Eggs, Other Dairy",
+      "image": "whipped-cream.jpg",
+      "consistency": "SOLID",
+      "name": "cool whip",
+      "nameClean": "fat free whipped topping",
+      "original": "1 large container cool whip",
+      "originalName": "cool whip",
+      "amount": 1,
+      "unit": "large container",
+      "meta": [],
+      "measures": {
+        "us": {
+          "amount": 1,
+          "unitShort": "large container",
+          "unitLong": "large container"
+        },
+        "metric": {
+          "amount": 1,
+          "unitShort": "large container",
+          "unitLong": "large container"
+        }
+      }
+    },
+    {
+      "id": 1200,
+      "aisle": "Milk, Eggs, Other Dairy",
+      "image": "whipped-cream.jpg",
+      "consistency": "SOLID",
+      "name": "extract. fold in cool whip if needed. spread over crust",
+      "nameClean": "fat free whipped topping",
+      "original": "2Filling: Blend cream cheese sugar,liqueur or extract. Fold in 1 cup cool whip or more if needed. Spread over cooled crust.",
+      "originalName": "2Filling: Blend cream cheese sugar,liqueur or extract. Fold in cool whip or more if needed. Spread over cooled crust",
+      "amount": 1,
+      "unit": "cup",
+      "meta": [
+        "cooled"
+      ],
+      "measures": {
+        "us": {
+          "amount": 1,
+          "unitShort": "cup",
+          "unitLong": "cup"
+        },
+        "metric": {
+          "amount": 236.588,
+          "unitShort": "ml",
+          "unitLong": "milliliters"
+        }
+      }
+    },
+    {
+      "id": 11519297,
+      "aisle": "Nut butters, Jams, and Honey",
+      "image": "fig-preserves.jpg",
+      "consistency": "SOLID",
+      "name": "let set min. spread",
+      "nameClean": "fig jam",
+      "original": "4Let set about 5 min. Spread 1 1/2 -2 cups cool whip over pudding mixture.",
+      "originalName": "4Let set about min. Spread 1 1/2 -2 cups cool whip over pudding mixture",
+      "amount": 5,
+      "unit": "",
+      "meta": [],
+      "measures": {
+        "us": {
+          "amount": 5,
+          "unitShort": "",
+          "unitLong": ""
+        },
+        "metric": {
+          "amount": 5,
+          "unitShort": "",
+          "unitLong": ""
+        }
+      }
+    },
+    {
+      "id": 10012142,
+      "aisle": "Nuts;Savory Snacks;Baking",
+      "image": "pecans.jpg",
+      "consistency": "SOLID",
+      "name": "pecans",
+      "nameClean": "pecan pieces",
+      "original": "1 cup chopped pecans",
+      "originalName": "chopped pecans",
+      "amount": 1,
+      "unit": "cup",
+      "meta": [
+        "chopped"
+      ],
+      "measures": {
+        "us": {
+          "amount": 1,
+          "unitShort": "cup",
+          "unitLong": "cup"
+        },
+        "metric": {
+          "amount": 236.588,
+          "unitShort": "ml",
+          "unitLong": "milliliters"
+        }
+      }
+    },
+    {
+      "id": 19336,
+      "aisle": "Baking",
+      "image": "powdered-sugar.jpg",
+      "consistency": "SOLID",
+      "name": "powdered sugar",
+      "nameClean": "powdered sugar",
+      "original": "1 cup powdered sugar",
+      "originalName": "powdered sugar",
+      "amount": 1,
+      "unit": "cup",
+      "meta": [],
+      "measures": {
+        "us": {
+          "amount": 1,
+          "unitShort": "cup",
+          "unitLong": "cup"
+        },
+        "metric": {
+          "amount": 236.588,
+          "unitShort": "ml",
+          "unitLong": "milliliters"
+        }
+      }
+    },
+    {
+      "id": 1145,
+      "aisle": "Milk, Eggs, Other Dairy",
+      "image": "butter-sliced.jpg",
+      "consistency": "SOLID",
+      "name": "butter",
+      "nameClean": "unsalted butter",
+      "original": "1 cup unsalted butter, room temperature",
+      "originalName": "unsalted butter, room temperature",
+      "amount": 1,
+      "unit": "cup",
+      "meta": [
+        "unsalted",
+        "room temperature"
+      ],
+      "measures": {
+        "us": {
+          "amount": 1,
+          "unitShort": "cup",
+          "unitLong": "cup"
+        },
+        "metric": {
+          "amount": 236.588,
+          "unitShort": "ml",
+          "unitLong": "milliliters"
+        }
+      }
+    },
+    {
+      "id": 1011077,
+      "aisle": "Milk, Eggs, Other Dairy",
+      "image": "milk.png",
+      "consistency": "LIQUID",
+      "name": "milk",
+      "nameClean": "whole milk",
+      "original": "3 cups whole milk",
+      "originalName": "whole milk",
+      "amount": 3,
+      "unit": "cups",
+      "meta": [
+        "whole"
+      ],
+      "measures": {
+        "us": {
+          "amount": 3,
+          "unitShort": "cups",
+          "unitLong": "cups"
+        },
+        "metric": {
+          "amount": 709.764,
+          "unitShort": "ml",
+          "unitLong": "milliliters"
+        }
+      }
+    },
+    {
+      "id": -1,
+      "aisle": "?",
+      "image": null,
+      "consistency": "SOLID",
+      "name": "beat puddings",
+      "nameClean": null,
+      "original": "3Beat puddings with milk until blended [low speed]. Pour over cheese mixture.",
+      "originalName": "3Beat puddings with milk until blended [low speed]. Pour over cheese mixture",
+      "amount": 8,
+      "unit": "servings",
+      "meta": [
+        "with milk until blended [low speed]. pour over cheese mixture."
+      ],
+      "measures": {
+        "us": {
+          "amount": 8,
+          "unitShort": "servings",
+          "unitLong": "servings"
+        },
+        "metric": {
+          "amount": 8,
+          "unitShort": "servings",
+          "unitLong": "servings"
+        }
+      }
+    }
+  ],
+  "id": 632281,
+  "title": "Amaretto Cake",
+  "readyInMinutes": 45,
+  "servings": 8,
+  "sourceUrl": "http://www.foodista.com/recipe/2MMDSQLP/amaretto-cake",
+  "image": "https://spoonacular.com/recipeImages/632281-556x370.jpg",
+  "imageType": "jpg",
+  "summary": "You can never have too many dessert recipes, so give Amaretto Cake a try. This recipe serves 8. For <b>$2.34 per serving</b>, this recipe <b>covers 25%</b> of your daily requirements of vitamins and minerals. One portion of this dish contains around <b>22g of protein</b>, <b>86g of fat</b>, and a total of <b>1120 calories</b>. A mixture of butter, this is my favorite! rich and creamy, chocolate pudding, and a handful of other ingredients are all it takes to make this recipe so scrumptious. From preparation to the plate, this recipe takes roughly <b>45 minutes</b>. 5 people have tried and liked this recipe. It is brought to you by Foodista. All things considered, we decided this recipe <b>deserves a spoonacular score of 70%</b>. This score is solid. If you like this recipe, you might also like recipes such as <a href=\"https://spoonacular.com/recipes/almond-amaretto-cupcakes-with-amaretto-whipped-cream-518795\">Almond Amaretto Cupcakes with Amaretto Whipped Cream</a>, <a href=\"https://spoonacular.com/recipes/amaretto-cake-132731\">Amaretto Cake</a>, and <a href=\"https://spoonacular.com/recipes/amaretto-cake-132447\">Amaretto Cake</a>.",
+  "cuisines": [],
+  "dishTypes": [
+    "dessert"
+  ],
+  "diets": [],
+  "occasions": [],
+  "winePairing": {
+    "pairedWines": [
+      "cream sherry",
+      "port",
+      "moscato dasti"
+    ],
+    "pairingText": "Cream Sherry, Port, and Moscato d'Asti are my top picks for Cake. A common wine pairing rule is to make sure your wine is sweeter than your food. Delicate desserts go well with Moscato d'Asti, nutty desserts with cream sherry, and caramel or chocolate desserts pair well with port. The NV Solera Cream Sherry with a 4.5 out of 5 star rating seems like a good match. It costs about 17 dollars per bottle.",
+    "productMatches": [
+      {
+        "id": 428475,
+        "title": "NV Solera Cream Sherry",
+        "description": "The Solera Cream Sherry has a brilliant amber and deep copper hue. With butterscotch and pecan aromas, the sweet salted nut and brown spice aromas carry a complex caramel accent. A sweet entry leads to a rounded, lush, moderately full-bodied palate with a lengthy, flavorful finish.",
+        "price": "$16.99",
+        "imageUrl": "https://spoonacular.com/productImages/428475-312x231.jpg",
+        "averageRating": 0.9,
+        "ratingCount": 4,
+        "score": 0.823076923076923,
+        "link": "https://www.amazon.com/NV-Solera-Cream-Sherry-750/dp/B00HSME8OW?tag=spoonacular-20"
+      }
+    ]
+  },
+  "instructions": "<ol><li>Crust: Mix flour, powdered sugar butter and pecans together [cut butter in flour mixture with 2knives or pastry blender. Press mixture in bottom and sides of a 9x13\" pan or a 10\" pie plate. Bake at 325 degrees for 25 min.</li><li>Filling: Blend cream cheese sugar,liqueur or extract. Fold in 1 cup cool whip or more if needed. Spread over cooled crust.</li><li>Beat puddings with milk until blended [low speed]. Pour over cheese mixture.</li><li>Let set about 5 min. Spread 1 1/2 -2 cups cool whip over pudding mixture.</li><li>Shave milk chocolate over the top. Let set for 8 hours for the best flavor.</li><li>This is my favorite! Rich and creamy.</li></ol>",
+  "analyzedInstructions": [
+    {
+      "name": "Crust",
+      "steps": [
+        {
+          "number": 1,
+          "step": "Mix flour, powdered sugar butter and pecans together [cut butter in flour mixture with 2knives or pastry blender. Press mixture in bottom and sides of a 9x13\" pan or a 10\" pie plate.",
+          "ingredients": [
+            {
+              "id": 19336,
+              "name": "powdered sugar",
+              "localizedName": "powdered sugar",
+              "image": "powdered-sugar.jpg"
+            },
+            {
+              "id": 1001,
+              "name": "butter",
+              "localizedName": "butter",
+              "image": "butter-sliced.jpg"
+            },
+            {
+              "id": 12142,
+              "name": "pecans",
+              "localizedName": "pecans",
+              "image": "pecans.jpg"
+            },
+            {
+              "id": 20081,
+              "name": "all purpose flour",
+              "localizedName": "all purpose flour",
+              "image": "flour.png"
+            }
+          ],
+          "equipment": [
+            {
+              "id": 404726,
+              "name": "blender",
+              "localizedName": "blender",
+              "image": "blender.png"
+            },
+            {
+              "id": 404645,
+              "name": "frying pan",
+              "localizedName": "frying pan",
+              "image": "pan.png"
+            }
+          ]
+        },
+        {
+          "number": 2,
+          "step": "Bake at 325 degrees for 25 min.Filling: Blend cream cheese sugar,liqueur or extract. Fold in 1 cup cool whip or more if needed.",
+          "ingredients": [
+            {
+              "id": 1017,
+              "name": "cream cheese",
+              "localizedName": "cream cheese",
+              "image": "cream-cheese.jpg"
+            },
+            {
+              "id": 0,
+              "name": "extract",
+              "localizedName": "extract",
+              "image": ""
+            },
+            {
+              "id": 0,
+              "name": "liqueur",
+              "localizedName": "liqueur",
+              "image": "rum-dark.jpg"
+            },
+            {
+              "id": 19335,
+              "name": "sugar",
+              "localizedName": "sugar",
+              "image": "sugar-in-bowl.png"
+            }
+          ],
+          "equipment": [
+            {
+              "id": 404784,
+              "name": "oven",
+              "localizedName": "oven",
+              "image": "oven.jpg"
+            }
+          ],
+          "length": {
+            "number": 25,
+            "unit": "minutes"
+          }
+        },
+        {
+          "number": 3,
+          "step": "Spread over cooled crust.Beat puddings with milk until blended [low speed].",
+          "ingredients": [
+            {
+              "id": 0,
+              "name": "spread",
+              "localizedName": "spread",
+              "image": ""
+            },
+            {
+              "id": 0,
+              "name": "crust",
+              "localizedName": "crust",
+              "image": ""
+            },
+            {
+              "id": 1077,
+              "name": "milk",
+              "localizedName": "milk",
+              "image": "milk.png"
+            }
+          ],
+          "equipment": []
+        },
+        {
+          "number": 4,
+          "step": "Pour over cheese mixture.",
+          "ingredients": [
+            {
+              "id": 1041009,
+              "name": "cheese",
+              "localizedName": "cheese",
+              "image": "cheddar-cheese.png"
+            }
+          ],
+          "equipment": []
+        },
+        {
+          "number": 5,
+          "step": "Let set about 5 min.",
+          "ingredients": [],
+          "equipment": [],
+          "length": {
+            "number": 5,
+            "unit": "minutes"
+          }
+        },
+        {
+          "number": 6,
+          "step": "Spread 1 1/2 -2 cups cool whip over pudding mixture.Shave milk chocolate over the top.",
+          "ingredients": [
+            {
+              "id": 19081,
+              "name": "milk chocolate",
+              "localizedName": "milk chocolate",
+              "image": "milk-chocolate.jpg"
+            },
+            {
+              "id": 0,
+              "name": "spread",
+              "localizedName": "spread",
+              "image": ""
+            }
+          ],
+          "equipment": []
+        },
+        {
+          "number": 7,
+          "step": "Let set for 8 hours for the best flavor.This is my favorite! Rich and creamy.",
+          "ingredients": [],
+          "equipment": [],
+          "length": {
+            "number": 480,
+            "unit": "minutes"
+          }
+        }
+      ]
+    }
+  ],
+  "originalId": null,
+  "spoonacularSourceUrl": "https://spoonacular.com/amaretto-cake-632281"
+}

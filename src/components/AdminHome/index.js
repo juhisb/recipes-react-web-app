@@ -87,18 +87,19 @@ const AdminHomePage = () => {
             {
                 currentAdmin &&
                 pendingList ?
-                    <div className="container">
-                        <h2> Reviewers Pending to Approve</h2>
-                        <ul>
-                            {pendingList.map((item) => (
+                    <div className="container mt-3">
+                        <h3> Reviewers Pending to Approve</h3>
+                        {/*<ul className="p-0">*/}
 
-                                <div key={item._id} className="list-group m-2">
-                                    <div className="list-group-item ">
+
+                                <div  className="list-group mb-2">
+                                    {pendingList.map((item) => (
+                                    <div key={item._id} className="list-group-item mb-2">
                                         <div className="row">
-                                            <div className="col-8">
+                                            <div className="col-6 col-md-8 col-xl-10">
                                                 {item.username}
                                             </div>
-                                            <div className="col-2">
+                                            <div className="col-3 col-md-2 col-xl-1">
 
                                                 <Button
                                                     onClick={() => handleApprove(item._id)}
@@ -107,7 +108,7 @@ const AdminHomePage = () => {
                                                 </Button>
                                             </div>
 
-                                            <div className="col-2">
+                                            <div className="col-3 col-md-2 col-xl-1">
                                                 <Button
                                                     onClick={() => handleDecline(item._id)}
 
@@ -117,11 +118,11 @@ const AdminHomePage = () => {
                                             </div>
                                         </div>
                                     </div>
-
+                                    ))}
                                 </div>
 
-                            ))}
-                        </ul>
+
+                        {/*</ul>*/}
 
                     </div>
 
@@ -134,12 +135,12 @@ const AdminHomePage = () => {
                 approved ?
                     <div className="container">
 
-                        <h2> Approved Reviewers </h2>
-                        <div className="list-group m-2">
+                        <h3> Approved Reviewers </h3>
+                        <div className="list-group mb-2">
                             {
                                 approved.map((item) => (
                                         <div key={item._id} role= "button"
-                                            className="list-group m-2">
+                                            className="list-group mb-2">
                                             <div
                                                 onClick={async () => {
                                                     await getUserId(item.username)
