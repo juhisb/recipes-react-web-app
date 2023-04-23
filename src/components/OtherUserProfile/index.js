@@ -1,5 +1,6 @@
 import React, {useEffect, useState} from "react";
 import {Link, useParams} from "react-router-dom";
+import "./index.css"
 import {findUser} from "../../services/user-service";
 import {useDispatch, useSelector} from "react-redux";
 import {addFollowerThunk, findAllFollowersThunk, unfollowThunk} from "../../services/following-thunk";
@@ -81,8 +82,9 @@ const OtherUserProfile = () => {
         user ?
             <>
 
+                <div className = "bgimage">
                 <div className="row mx-5">
-                    <div className="col-9">
+                    <div className="col-xxl-9 col-xl-9 col-lg-9 col-md-12 col-sm-12">
 
                         <div className="position-relative ">
 
@@ -96,7 +98,7 @@ const OtherUserProfile = () => {
                         <div className="p-2 name">
                             <div className="row">
                                 <div className="col-8">
-                                    <h1 className=" text-secondary">@ {user.username}  </h1>
+                                    <h1 className=" text-dark">@{user.username}  </h1>
 
                                 </div>
                                 <div className="col-4">
@@ -125,9 +127,9 @@ const OtherUserProfile = () => {
                             </div>
 
 
-                            <div className="m-3 text-secondary">
+                            <div className="m-1 text-dark  text-left">
                                 <h4 className="title"> Name : {user.firstName} {user.lastName}</h4>
-                                <h4 className="title"> Account Type : {user.accountType} </h4>
+                                <p className="title"> Account Type : {user.accountType} </p>
                             </div>
 
                         </div>
@@ -153,12 +155,10 @@ const OtherUserProfile = () => {
 
                     </div>
 
-                    <div className="col">
+                    <div className="d-none d-lg-block col-lg-3 col-xl-3 col-xxl-3">
                         <OtherFollowing/>
                     </div>
-
-
-
+                </div>
                 </div>
             </> : null
 

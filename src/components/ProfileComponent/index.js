@@ -25,7 +25,7 @@ const ProfileScreen = () => {
     return (
         <>
 
-        <div className = "bgimage">
+        <div className = "bgimage col-12 col-xxl-12 col-xl-12 col-lg-12 col-md-12 col-sm-4">
 
             <div className="row mx-5">
                 <div className="row my-4 ">
@@ -86,7 +86,7 @@ const ProfileScreen = () => {
                     </div>
                     <h3><p className="title">Recipes Pinned</p> </h3>
                     <PinnedRecipe/>
-                    </p>
+
 
 
                     {

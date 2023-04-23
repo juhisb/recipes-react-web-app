@@ -18,6 +18,8 @@
 
 .bgimage{
     background-image: url("../../../public/images/bcg2.webp");
+
     background-size: cover;
     background-repeat: no-repeat;
+
 }
