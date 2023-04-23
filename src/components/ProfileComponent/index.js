@@ -86,7 +86,6 @@ const ProfileScreen = () => {
                     </div>
                     <h3><p className="title">Recipes Pinned</p> </h3>
                     <PinnedRecipe/>
-                    </p>
 
 
                     {

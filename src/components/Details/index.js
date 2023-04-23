@@ -51,7 +51,7 @@ const Detail = () => {
         }
         load();
 
-    }, [])
+    }, [params.id])
 
     return (
         <>
@@ -84,7 +84,7 @@ const Detail = () => {
                                 icon={faWheatAwn}/> gluten free</span> : <></>}
                         </div>
 
-                        <>{averageRating && renderIcons(averageRating)}</>
+                        <>{averageRating === 0 ? "No Rating" : renderIcons(averageRating)}</>
                         <PinDetail recipeId={params.id} recipeInfo={recipeData} />
 
                     </div>
