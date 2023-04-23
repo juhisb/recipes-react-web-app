@@ -1,5 +1,6 @@
 import React, {useState} from "react";
 import {compose} from "redux";
+import "./index.css";
 import {useDispatch, useSelector} from "react-redux";
 import {updateProfileThunk} from "../../services/user-thunk";
 import {useNavigate} from "react-router";
@@ -35,7 +36,8 @@ const EditProfile = (editProfile) => {
         <>
 
             <div className="row mx-5">
-                <div className="col-9">
+                <div className = "bgimage">
+                <div className="col-10 col-xxl-10 col-xl-10 col-lg-10 col-md-10 col-sm-10">
                 <div className="position-relative">
                     {/*<i*/}
                     {/*    onClick={cancelClickHandler}*/}
@@ -47,10 +49,10 @@ const EditProfile = (editProfile) => {
                     </div>
                 </div>
 
-                <div className="mb-4">
+                <div className="mb-4 ">
                     <button
                         onClick={saveClickHandler}
-                        className=" my-1 me-0  btn btn-dark col-1 float-end "> Save
+                        className=" my-1 me-0  btn btn-dark col-1 float-end col-4 col-sm-2"> Save
                     </button>
 
                 </div>
@@ -101,7 +103,8 @@ const EditProfile = (editProfile) => {
                     </div>
 
                 </div>
-            </div>
+                </div>
+                </div>
 
             </div>
             </>
