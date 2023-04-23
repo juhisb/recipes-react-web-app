@@ -10,17 +10,18 @@ const NewReview = (
     }) => {
     let [reviewByUser, setReviewByUser] = useState('');
     const { currentUser } = useSelector(state => state.userData);
+    const { currentAdmin } = useSelector(state => state.adminData);
     console.log(recipeInfo)
     const [rating, setRating] = useState(0)
     const dispatch = useDispatch();
     const reviewClickHAndler = () => {
-        if (!currentUser) {
+        if (!currentUser && !currentAdmin) {
             alert('You need to login to perform this action!')
             return;
         }
         const newReview = {
             recipeId: recipeId,
-            reviewBy: currentUser,
+            reviewBy: currentAdmin ? currentAdmin : currentUser,
             review: reviewByUser,
             rating: rating,
             recipeImage: recipeInfo.image,
@@ -58,7 +59,7 @@ const NewReview = (
                 </div>
                 <hr />
                 <div className="float-end">
-                    <button className="rounded-pill btn btn-dark float-end mt-2 ps-3 pe-3 fw-bold"
+                    <button className="rounded btn btn-dark float-end mt-2 ps-3 pe-3 fw-bold"
                             onClick={reviewClickHAndler}>
                         Add
                     </button>

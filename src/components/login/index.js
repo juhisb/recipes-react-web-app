@@ -43,7 +43,7 @@ const Login = () => {
                             {error}
                         </div>
                     }
-                    <h3 className="Auth-form-title">Sign In</h3>
+                    <h3 className="Auth-form-title primary-text">Sign In</h3>
                     <div className="form-group mt-3">
                         <label>Username</label>
                         <input
@@ -64,13 +64,13 @@ const Login = () => {
                     <div className="d-grid gap-2 mt-3">
                         <button
                             type="submit"
-                            className="btn btn-dark"
+                            className="btn primary-bg"
                             onClick={handleLoginBtn}>
                             Login
                         </button>
                     </div>
                     <p className="forgot-password text-right mt-2">
-                        New User? <Link to="/register">Sign Up</Link>
+                        New User? <Link className="primary-text" to="/register">Sign Up</Link>
                     </p>
                 </div>
             </div>

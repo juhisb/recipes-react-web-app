@@ -41,7 +41,7 @@ const AdminLogin = () => {
                                 {error}
                             </div>
                         }
-                        <h3 className="Auth-form-title">Admin Login</h3>
+                        <h3 className="Auth-form-title primary-text">Admin Login</h3>
                         <div className="form-group mt-3">
                             <label>Username</label>
                             <input
@@ -62,7 +62,7 @@ const AdminLogin = () => {
                         <div className="d-grid gap-2 mt-3">
                             <button
                                 type="submit"
-                                className="btn btn-dark"
+                                className="btn primary-bg"
                                 onClick={handleLoginBtn}>
                                 Login
                             </button>

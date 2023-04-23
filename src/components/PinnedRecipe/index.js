@@ -17,21 +17,21 @@ const LikedRecipe = () => {
 
     return (
         <div>
-            <Row className=" justify-content-center align-items-stretch">
+            <Row className="mt-3  align-items-stretch">
                 {pinnedRecipeList?.map((recipe) => (
-                    <Col key={recipe.recipeId} xs={12} md={4} lg={3} sm={6}>
+                    <Col className="d-flex align-items-stretch" key={recipe.recipeId} xs={12} md={4} lg={3} sm={6}>
                         <Card className="shadow p-0 mb-5 bg-white rounded">
                             <Card.Img src={recipe.recipeImage} />
                             <Card.Body>
-                                <Link to={`/detail/${recipe.recipeId}`}  className="stretched-link" >
-                                    <Card.Title>{recipe.recipeTitle}</Card.Title>
+                                <Link to={`/detail/${recipe.recipeId}`}  className="stretched-link text-decoration-none" >
+                                    <Card.Title className="text-center primary-text ">{recipe.recipeTitle}</Card.Title>
                                 </Link>
                             </Card.Body>
                         </Card>
                     </Col>
                 ))}
                 {
-                    pinnedRecipeList.length == 0 &&
+                    pinnedRecipeList.length === 0 &&
                     <p>Nothing Liked!!</p>
                 }
             </Row>

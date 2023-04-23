@@ -23,11 +23,26 @@ const RecipeList = () => {
                 </div>
             }
             <div>
-                <Row className="mt-5 justify-content-center align-items-stretch">
-                    {recipesList.filter((r, a) => a < 8).map((r, a) => (
-                        <SearchResults recipes={r}/>
+                <ul className="list-group p-2">
+                    {recipesList.filter((r, a) => a < 5).map((r, a) => (
+                        <li className="list-group-item">
+                            <div className="row">
+                                <div className="col-xl-4">
+                                    <img src={r.image}
+                                         height={60}  className="rounded" alt="..."/>
+                                </div>
+                                <div className="col-xl-8">
+                                    <div className="ms-2">
+                                        <Link to={'/detail/' + r.id}  className="stretched-link text-decoration-none" >
+                                        <h6 className="mt-0 mb-0 primary-text">{r.title}</h6>
+                                        </Link>
+                                        {/*<p className="mb-0">@{who.handle}</p>*/}
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
                     ))}
-                </Row>
+                </ul>
 
             </div>
 
