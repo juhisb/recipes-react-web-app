@@ -8,16 +8,17 @@ const PinDetail = ({
                        recipeInfo
                    }) => {
     const { currentUser } = useSelector(state => state.userData);
+    const { currentAdmin } = useSelector(state => state.adminData);
     const [userPinsRecipe, setUserPinsRecipe] = useState(false);
     const [recipePins, setRecipePins] = useState(0);
     const dispatch = useDispatch();
     const pinRecipeHandler = async () => {
-        if (!currentUser) {
+        if (!currentUser && !currentAdmin) {
             alert('You need to login to perform this action!')
             return;
         }
         const userPinnedRecipe = {
-            userId: currentUser._id,
+            userId: currentAdmin? currentAdmin._id : currentUser._id,
             recipeId: recipeId,
             recipeImage: recipeInfo.image,
             recipeTitle: recipeInfo.title
@@ -56,13 +57,14 @@ const PinDetail = ({
     }, []);
 
     return(
-        <div className="card-body">
-            <h5 className="card-title"><a
+        <div className="card-body mt-3">
+            <h5 className="card-title   p-2"><a
                 > {!userPinsRecipe ?
-                <i className="bi bi-pin-angle" onClick={pinRecipeHandler}></i> :
-                <i className="bi bi-pin-fill" onClick={pinRecipeHandler}></i> }
+                <span className="border rounded p-2" onClick={pinRecipeHandler} ><i className="bi bi-pin-angle" ></i> PIN RECIPE</span> :
+                <span className="border rounded p-2" onClick={pinRecipeHandler}><i className="bi bi-pin-fill" ></i> REMOVE PIN</span> }
             </a>
-                <span className="star-text ms-2">{} {recipePins} Pin(s)</span></h5>
+                </h5>
+            <h6 className="mt-2"><span className="star-text mt-3 ms-2">{} {recipePins} Pin(s)</span></h6>
 
         </div>
     )

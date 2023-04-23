@@ -6,10 +6,12 @@ import {useNavigate} from "react-router";
 import {logoutThunk, profileThunk} from "../../services/user-thunk";
 import {adminLogoutThunk, adminProfileThunk} from "../../services/admin-thunk";
 import {useEffect, useState} from "react";
+import {findApprovedReviewerThunk} from "../../services/reviewer-thunk";
 
 const Header = () => {
     const {currentUser} = useSelector(state => state.userData)
     const {currentAdmin} = useSelector(state => state.adminData)
+
     const dispatch = useDispatch()
     const navigate = useNavigate()
     const handleLogout = () => {
@@ -24,12 +26,16 @@ const Header = () => {
         const load = async () => {
             await dispatch(profileThunk());
             await dispatch(adminProfileThunk());
+            if (currentUser) {
+                await dispatch(findApprovedReviewerThunk(currentUser.username));
+            }
+
         }
         load();
     }, [])
     return (
         <>
-            <Navbar expand="lg" bg="light" variant="light" collapseOnSelect>
+            <Navbar expand="md" bg="light" variant="light" collapseOnSelect>
                 <Container>
 
                         <Navbar.Brand href="/">
@@ -38,10 +44,11 @@ const Header = () => {
                                 className="d-inline-block align-top logo"
                                 alt="MealTime"
                             />
-                  {/*          <Navbar.Toggle aria-controls="responsive-navbar-nav" />*/}
+
                         </Navbar.Brand>
-                    {/*<Navbar.Collapse id="responsive-navbar-nav">*/}
-                    <Nav>
+                    <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+                    <Navbar.Collapse id="responsive-navbar-nav">
+                    <Nav className="ms-auto">
                         {
                             currentUser &&
                             <>
@@ -69,7 +76,7 @@ const Header = () => {
                         }
 
                     </Nav>
-                    {/*</Navbar.Collapse>*/}
+                    </Navbar.Collapse>
                 </Container>
             </Navbar>
         </>

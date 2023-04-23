@@ -23,8 +23,8 @@ const ReviewItem = (
                     <Card.Img src={rev.recipeImage} />
                     <Card.Body>
 
-                        <Link to={'/detail/' + rev.recipeId}>
-                            <Card.Title>{rev.recipeTitle}</Card.Title>
+                        <Link to={'/detail/' + rev.recipeId} className="stretched-link text-decoration-none">
+                            <Card.Title className="text-center primary-text ">{rev.recipeTitle}</Card.Title>
                         </Link>
                         <hr />
                         <Card.Text>{rev.review}</Card.Text>

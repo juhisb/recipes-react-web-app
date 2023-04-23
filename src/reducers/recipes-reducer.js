@@ -26,7 +26,8 @@ const recipesSlice = createSlice({
         },
         [recipesThunk.rejected]:
             (state, action) => {
-                state.loading = false
+            console.log("here")
+            state.loading = false
                 state.error = action.error
             }
 

@@ -76,7 +76,7 @@ const ProfileScreen = () => {
                         </div>
 
                     </div>
-                    <h3><p className="title">Recipes You Liked</p> </h3>
+                    <h3><p className="title">Recipes Pinned</p> </h3>
                     <PinnedRecipe/>
 
                     {

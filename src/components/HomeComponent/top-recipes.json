@@ -1,0 +1,25 @@
+[ {
+  "index": 1,
+  "id":632281,
+  "title": "Amaretto Cake",
+  "image": "https://spoonacular.com/recipeImages/632281-556x370.jpg"
+},
+  {
+    "index": 2,
+    "id": 657031,
+    "title": "Potatoes Smothered W/ Egg Sauce (Cariucho)",
+    "image": "https://spoonacular.com/recipeImages/657031-556x370.jpg"
+  },
+  {
+    "index": 3,
+    "id": 662501,
+    "title": "Sweet Corn Pudding",
+    "image": "https://spoonacular.com/recipeImages/662501-556x370.jpg"
+  },
+  {
+    "index": 4,
+    "id": 662502,
+    "title": "Sweet corn-channa dal fritters",
+    "image": "https://spoonacular.com/recipeImages/662502-556x370.jpg"
+  }
+]
