@@ -105,7 +105,7 @@ const OtherUserProfile = () => {
 
 
                                     {
-                                        !checkFollowingData &&
+                                        currentUser && !checkFollowingData &&
                                         <button className="btn btn-dark  float-end"
                                                 onClick={addFollowerHandler}>
                                             Follow
@@ -113,7 +113,7 @@ const OtherUserProfile = () => {
                                     }
 
                                     {
-                                        checkFollowingData &&
+                                        currentUser && checkFollowingData &&
                                         <button className="btn btn-dark  float-end"
                                                 onClick={unFollowHandler}>
                                             Unfollow
