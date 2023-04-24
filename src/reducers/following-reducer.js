@@ -26,11 +26,11 @@ const followingSlice = createSlice({
             state.followingList = [];
         },
         [addFollowerThunk.fulfilled]: (state, action) => {
-            state.followingList.push(action.payload)
+            state.followingList.followers.push(action.payload)
         },
 
         [unfollowThunk.fulfilled]: (state, action) => {
-            state.followingList = state.followingList
+            state.followingList.followers = state.followingList.followers
                 .filter(f => f.userId !== action.payload.userId && f.followingId !== action.payload.followingId)
 
 

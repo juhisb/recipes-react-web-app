@@ -26,17 +26,21 @@ const OtherUserProfile = () => {
 
     useEffect(() => {
         const getDataFromServer = async () => {
+            console.log("getDataFromServer !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
             const userData = await findUser(otherUser)
             setUserData(userData);
         };
         dispatch(findOtherAllPinnedRecipeThunk(otherUser))
         getDataFromServer();
 
+
     }, [])
 
     useEffect(() => {
 
         const checkFollowing = async () => {
+            const user = await findUser(otherUser)
+            console.log("followers !!!!!!!!!!!!!!!!!!!!! ",followers);
             followers.forEach(function (key, value) {
 
 
@@ -52,6 +56,10 @@ const OtherUserProfile = () => {
             }
 
         };
+        if (currentUser) {
+            dispatch(findAllFollowersThunk(currentUser._id))
+        }
+
         checkFollowing();
     }, [user])
 
