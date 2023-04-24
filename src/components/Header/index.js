@@ -24,6 +24,7 @@ const Header = () => {
     }
     useEffect(() => {
         const load = async () => {
+
             await dispatch(profileThunk());
             await dispatch(adminProfileThunk());
             if (currentUser) {

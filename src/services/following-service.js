@@ -6,6 +6,7 @@ const API_BASE = APP_URL.node_server;
 
 export const findAllFollowers = async (userId) => {
     const response = await api.get(`${API_BASE}/follow/${userId}`, userId);
+    console.log("findAllFollowers !!!!!!!!!!!!!!! ",response)
     return response.data
 }
 

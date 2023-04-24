@@ -17,26 +17,29 @@ const OtherUserProfile = () => {
     const { currentReviewer, pendingList } = useSelector(state => state.reviewer);
     const dispatch = useDispatch();
     const navigate = useNavigate();
-    let {currentUser} = useSelector(state => state.userData)
+    const {currentUser} = useSelector(state => state.userData)
     const {currentAdmin} = useSelector(state => state.adminData)
     const {followingList, followers,loading} = useSelector(state => state.following)
     const [checkFollowingData, setFollowingData] = useState(false);
     const {otherPinnedRecipeList} = useSelector((state) => state.pinnedRecipe)
-    currentUser = currentUser == null ? currentAdmin: currentUser;
-
+    // currentUser = currentUser == null ? currentAdmin: currentUser;
     useEffect(() => {
         const getDataFromServer = async () => {
+            console.log("getDataFromServer !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
             const userData = await findUser(otherUser)
             setUserData(userData);
         };
         dispatch(findOtherAllPinnedRecipeThunk(otherUser))
         getDataFromServer();
 
+
     }, [])
 
     useEffect(() => {
 
         const checkFollowing = async () => {
+            const user = await findUser(otherUser)
+            // console.log("followers !!!!!!!!!!!!!!!!!!!!! ",followers);
             followers.forEach(function (key, value) {
 
 
@@ -46,18 +49,35 @@ const OtherUserProfile = () => {
 
             })
 
-            if (user._id === currentUser._id) {
+            if (currentUser && user._id === currentUser._id) {
                 navigate("/profile");
 
             }
+            else if (currentAdmin && user._id === currentAdmin._id) {
+                navigate("/profile");
+            }
 
         };
+        if (currentUser) {
+            dispatch(findAllFollowersThunk(currentUser._id))
+        }
+        else if(currentAdmin) {
+            dispatch(findAllFollowersThunk(currentAdmin._id))
+        }
+
         checkFollowing();
     }, [user])
 
 
     const addFollowerHandler = () => {
-        const userId = currentUser._id;
+        let currentUserId = null;
+        if (currentUser) {
+            currentUserId = currentUser._id;
+        }
+        else if (currentAdmin) {
+            currentUserId = currentAdmin._id;
+        }
+        const userId = currentUserId;
         const followingId = user._id;
         const follow = {userId, followingId}
         dispatch(addFollowerThunk(follow));
@@ -68,7 +88,14 @@ const OtherUserProfile = () => {
     }
 
     const unFollowHandler = () => {
-        const userId = currentUser._id;
+        let currentUserId = null;
+        if (currentUser) {
+            currentUserId = currentUser._id;
+        }
+        else if (currentAdmin) {
+            currentUserId = currentAdmin._id;
+        }
+        const userId = currentUserId;
         const followingId = user._id;
         const unfollowId = {userId, followingId}
         dispatch(unfollowThunk(unfollowId));
@@ -105,7 +132,7 @@ const OtherUserProfile = () => {
 
 
                                     {
-                                        currentUser && !checkFollowingData &&
+                                        (currentUser || currentAdmin) && !checkFollowingData &&
                                         <button className="btn btn-dark  float-end"
                                                 onClick={addFollowerHandler}>
                                             Follow
@@ -113,7 +140,7 @@ const OtherUserProfile = () => {
                                     }
 
                                     {
-                                        currentUser && checkFollowingData &&
+                                        (currentUser  || currentAdmin) && checkFollowingData &&
                                         <button className="btn btn-dark  float-end"
                                                 onClick={unFollowHandler}>
                                             Unfollow
