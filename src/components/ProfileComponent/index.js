@@ -11,13 +11,13 @@ import PinnedRecipe from "../PinnedRecipe";
 
 
 const ProfileScreen = () => {
-    let {currentUser} = useSelector(state => state.userData)
+    const {currentUser} = useSelector(state => state.userData)
     const {currentAdmin} = useSelector(state => state.adminData)
     const { currentReviewer, pendingList } = useSelector(state => state.reviewer);
     const [editProfile, setEditProfile] = useState(false);
     const navigate = useNavigate();
     const [input, setInput] = useState();
-    currentUser = currentUser == null ? currentAdmin: currentUser;
+    // currentUser = currentUser == null ? currentAdmin: currentUser;
     const editClickHandler = () => {
         setEditProfile(true);
         navigate("/edit-profile");
@@ -71,8 +71,7 @@ const ProfileScreen = () => {
                             </div>
                         </div>
                         <div className="m-1 text-dark  text-left">
-                            <h4 className="title"> {currentUser == null ? currentAdmin.firstName: currentUser.firstName}
-                                {currentUser == null ? currentAdmin.lastName: currentUser.lastName}</h4>
+                            <h4 className="title"> {currentUser == null ? currentAdmin.firstName: currentUser.firstName} {currentUser == null ? currentAdmin.lastName: currentUser.lastName}</h4>
                             <p className="title text-dark"> Email Id : {currentUser == null ? currentAdmin.email: currentUser.email}
                              <p className="title"> Phone Number : {currentUser == null ? currentAdmin.phoneNumber: currentUser.phoneNumber}
                               <p className="title"> Account Type : {currentUser == null ? currentAdmin.accountType: currentUser.accountType} </p>
@@ -90,7 +89,7 @@ const ProfileScreen = () => {
 
 
                     {
-                        currentUser.accountType != "USER" &&
+                        ((currentUser && currentUser.accountType != "USER") || currentAdmin) &&
                         <>
                             <h3> <p className="title">Reviews Posted</p></h3>
                             <UserReview/>
