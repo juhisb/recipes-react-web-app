@@ -1,0 +1,25 @@
+.img {
+    height: 200px;
+}
+
+.name {
+    margin-left: 130px;
+}
+
+.bg{
+    position: fixed;
+    top: 0;
+    left: 0;
+
+      /* Preserve aspet ratio */
+    min-width: 100%;
+    min-height: 100%;
+}
+
+.bgimage{
+    background-image: url("../../../public/images/bcgimg12.png");
+
+    background-size: cover;
+    background-repeat: no-repeat;
+
+}

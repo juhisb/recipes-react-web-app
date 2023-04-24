@@ -17,9 +17,7 @@
 }
 
 .bgimage{
-    background-image: url("../../../public/images/bcg2.webp");
-
-    background-size: cover;
-    background-repeat: no-repeat;
-
+    background-image: url("/Users/mary.j/2023/spring/webdev/recipes-react-web-app/recipes-react-web-app/public/images/bcgimg12.png");
+        background-size: cover;
+        background-repeat: no-repeat;
 }
